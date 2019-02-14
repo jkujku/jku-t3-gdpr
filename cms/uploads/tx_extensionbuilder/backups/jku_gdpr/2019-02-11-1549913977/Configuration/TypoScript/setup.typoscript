@@ -1,0 +1,15 @@
+
+# Module configuration
+module.tx_jkugdpr_web_jkugdprdashboard {
+    persistence {
+        storagePid = {$module.tx_jkugdpr_dashboard.persistence.storagePid}
+    }
+    view {
+        templateRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Templates/
+        templateRootPaths.1 = {$module.tx_jkugdpr_dashboard.view.templateRootPath}
+        partialRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Partials/
+        partialRootPaths.1 = {$module.tx_jkugdpr_dashboard.view.partialRootPath}
+        layoutRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Layouts/
+        layoutRootPaths.1 = {$module.tx_jkugdpr_dashboard.view.layoutRootPath}
+    }
+}
