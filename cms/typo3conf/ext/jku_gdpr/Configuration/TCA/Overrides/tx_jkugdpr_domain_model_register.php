@@ -1,7 +1,5 @@
 <?php
 defined('TYPO3_MODE') || die();
-
-
 if (!isset($GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type'])) {
     // no type field defined, so we define it here. This will only happen the first time the extension is installed!!
     $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type'] = 'tx_extbase_type';
@@ -31,12 +29,7 @@ if (!isset($GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type']))
     'after:' . $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['label']
 );
 
-
-
-
-
 $tmp_jku_gdpr_columns = [
-
 
     'tom_register_description' => [
         'exclude' => false,
@@ -48,12 +41,36 @@ $tmp_jku_gdpr_columns = [
             'eval' => 'trim'
         ]
     ],
+    'toms' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_tomregister.toms',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectMultipleSideBySide',
+            'foreign_table' => 'tx_jkugdpr_domain_model_tom',
+            'MM' => 'tx_jkugdpr_tomregister_tom_mm',
+            'size' => 10,
+            'autoSizeMax' => 30,
+            'maxitems' => 9999,
+            'multiple' => 0,
+            'fieldControl' => [
+                'editPopup' => [
+                    'disabled' => false,
+                ],
+                'addRecord' => [
+                    'disabled' => false,
+                ],
+                'listModule' => [
+                    'disabled' => true,
+                ],
+            ],
+        ],
+        
+    ],
 
 ];
 
-
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_jkugdpr_domain_model_register',$tmp_jku_gdpr_columns);
-
 
 /* inherit and extend the show items from the parent class */
 
@@ -67,16 +84,11 @@ if (isset($GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGd
     $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_TOMRegister']['showitem'] = '';
 }
 $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_TOMRegister']['showitem'] .= ',--div--;LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_tomregister,';
-$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_TOMRegister']['showitem'] .= 'tom_register_description';
-
+$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_TOMRegister']['showitem'] .= 'tom_register_description, toms';
 
 $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['columns'][$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type']]['config']['items'][] = ['LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_register.tx_extbase_type.Tx_JkuGdpr_TOMRegister','Tx_JkuGdpr_TOMRegister'];
 
-
-
-
 $tmp_jku_gdpr_columns = [
-
 
     'pa_register_description' => [
         'exclude' => false,
@@ -91,9 +103,7 @@ $tmp_jku_gdpr_columns = [
 
 ];
 
-
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_jkugdpr_domain_model_register',$tmp_jku_gdpr_columns);
-
 
 /* inherit and extend the show items from the parent class */
 
@@ -108,7 +118,6 @@ if (isset($GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGd
 }
 $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_PARegister']['showitem'] .= ',--div--;LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_paregister,';
 $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_PARegister']['showitem'] .= 'pa_register_description';
-
 
 $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['columns'][$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type']]['config']['items'][] = ['LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_register.tx_extbase_type.Tx_JkuGdpr_PARegister','Tx_JkuGdpr_PARegister'];
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

@@ -1,9 +1,9 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => true,
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '$argon2i$v=19$m=16384,t=16,p=2$R2Z2LjFJbjk2NzJabi56YQ$hBHpJVUXWdshGa8zp6Koa5kIroYAtQZsi8uAQHIYlW8',
+        'installToolPassword' => '$argon2i$v=19$m=16384,t=16,p=2$NEhNUlpGNVRQTEJCbjBSbQ$N69pdv3hTXMZxzoYqI9oNaAuyjl7AOLhz7pI4v+0Mxk',
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -54,12 +54,21 @@ return [
         ],
     ],
     'FE' => [
-        'debug' => false,
+        'debug' => true,
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
         ],
+    ],
+    'GFX' => [
+        'processor' => 'ImageMagick',
+        'processor_allowTemporaryMasksAsPng' => '',
+        'processor_colorspace' => 'RGB',
+        'processor_effects' => false,
+        'processor_enabled' => '1',
+        'processor_path' => '/usr/bin/',
+        'processor_path_lzw' => '/usr/bin/',
     ],
     'MAIL' => [
         'transport' => 'smtp',
@@ -70,15 +79,15 @@ return [
         'transport_smtp_username' => '',
     ],
     'SYS' => [
-        'devIPmask' => '',
-        'displayErrors' => 0,
+        'devIPmask' => '*',
+        'displayErrors' => 1,
         'encryptionKey' => 'ac9fcb21ef48117823de122bd28b9f07f952007d2de8a4dd07216d0a15f9bbaee191838740ea134f8e4918c748476b06',
-        'exceptionalErrors' => 4096,
+        'exceptionalErrors' => 12290,
         'features' => [
             'unifiedPageTranslationHandling' => true,
         ],
-        'sitename' => 'New TYPO3 site',
-        'systemLogLevel' => 2,
+        'sitename' => 'GDPR',
+        'systemLogLevel' => 0,
         'systemMaintainers' => [
             1,
         ],

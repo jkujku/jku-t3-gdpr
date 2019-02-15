@@ -1,6 +1,4 @@
 
-
-
 config.tx_extbase {
   persistence {
     classes {
@@ -9,6 +7,13 @@ config.tx_extbase {
         subclasses {
           Tx_JkuGdpr_TOMRegister = Jku\JkuGdpr\Domain\Model\TOMRegister
           Tx_JkuGdpr_PARegister = Jku\JkuGdpr\Domain\Model\PARegister
+          
+        }
+      }
+      Jku\JkuGdpr\Domain\Model\Category {
+        subclasses {
+          Tx_JkuGdpr_EmployeeCategory = Jku\JkuGdpr\Domain\Model\EmployeeCategory
+          Tx_JkuGdpr_DataCategory = Jku\JkuGdpr\Domain\Model\DataCategory
           
         }
       }
@@ -23,6 +28,20 @@ config.tx_extbase {
         mapping {
           tableName = tx_jkugdpr_domain_model_register
           recordType = Tx_JkuGdpr_PARegister
+        }
+      }
+
+      Jku\JkuGdpr\Domain\Model\EmployeeCategory {
+        mapping {
+          tableName = tx_jkugdpr_domain_model_category
+          recordType = Tx_JkuGdpr_EmployeeCategory
+        }
+      }
+
+      Jku\JkuGdpr\Domain\Model\DataCategory {
+        mapping {
+          tableName = tx_jkugdpr_domain_model_category
+          recordType = Tx_JkuGdpr_DataCategory
         }
       }
 

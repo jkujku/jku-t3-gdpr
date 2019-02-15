@@ -22,8 +22,6 @@ class PARegisterTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         parent::tearDown();
     }
 
-
-
     /**
      * @test
      */
