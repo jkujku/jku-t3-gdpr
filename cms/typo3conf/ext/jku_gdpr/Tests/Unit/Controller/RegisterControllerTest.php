@@ -25,6 +25,8 @@ class RegisterControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestC
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

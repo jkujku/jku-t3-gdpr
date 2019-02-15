@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-11T20:44:06Z" product-name="jku_gdpr">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-15T15:48:33Z" product-name="jku_gdpr">
 		<header/>
 		<body>
 			<trans-unit id="tx_jkugdpr_domain_model_register">
@@ -8,6 +8,36 @@
 			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_register.title">
 				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_register.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr.tx_extbase_type">
+				<source>Record Type</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr.tx_extbase_type.0">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_register.tx_extbase_type.Tx_JkuGdpr_Register">
+				<source>GDPR Register</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_tomregister">
+				<source>T O M Register</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_tomregister.tom_register_description">
+				<source>Tom Register Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_register.tx_extbase_type.Tx_JkuGdpr_TOMRegister">
+				<source>GDPR TOMRegister</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_paregister">
+				<source>P A Register</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_paregister.pa_register_description">
+				<source>Pa Register Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_register.tx_extbase_type.Tx_JkuGdpr_PARegister">
+				<source>GDPR PARegister</source>
 			</trans-unit>
 		</body>
 	</file>

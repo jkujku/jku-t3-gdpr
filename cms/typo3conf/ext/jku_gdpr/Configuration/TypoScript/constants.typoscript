@@ -1,4 +1,5 @@
 
+
 module.tx_jkugdpr_dashboard {
     view {
         # cat=module.tx_jkugdpr_dashboard/file; type=string; label=Path to template root (BE)
@@ -13,3 +14,5 @@ module.tx_jkugdpr_dashboard {
         storagePid =
     }
 }
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

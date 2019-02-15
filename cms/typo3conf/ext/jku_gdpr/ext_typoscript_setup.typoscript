@@ -1,0 +1,45 @@
+
+
+
+config.tx_extbase {
+  persistence {
+    classes {
+
+      Jku\JkuGdpr\Domain\Model\Register {
+        subclasses {
+          Tx_JkuGdpr_TOMRegister = Jku\JkuGdpr\Domain\Model\TOMRegister
+          Tx_JkuGdpr_PARegister = Jku\JkuGdpr\Domain\Model\PARegister
+          
+        }
+      }
+      Jku\JkuGdpr\Domain\Model\TOMRegister {
+        mapping {
+          tableName = tx_jkugdpr_domain_model_register
+          recordType = Tx_JkuGdpr_TOMRegister
+        }
+      }
+
+      Jku\JkuGdpr\Domain\Model\PARegister {
+        mapping {
+          tableName = tx_jkugdpr_domain_model_register
+          recordType = Tx_JkuGdpr_PARegister
+        }
+      }
+
+    }
+  }
+}
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+config.tx_extbase {
+	persistence {
+		classes {
+			Jku\JkuGdpr\Domain\Model\Register {
+				mapping {
+					tableName = tx_jkugdpr_domain_model_register
+					recordType = Tx_JkuGdpr_Register
+				}
+			}
+		}
+	}
+}

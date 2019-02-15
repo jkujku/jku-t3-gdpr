@@ -17,4 +17,17 @@ namespace Jku\JkuGdpr\Domain\Repository;
  */
 class RegisterRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+
+    // Order by title
+    protected $defaultOrderings = [
+    'title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+];
+    public function initializeObject()
+    {
+
+        /** @var  \TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface $querySettings */
+        $querySettings = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings::class);
+        $querySettings->setRespectStoragePage(false);
+        $this->setDefaultQuerySettings($querySettings);
+    }
 }

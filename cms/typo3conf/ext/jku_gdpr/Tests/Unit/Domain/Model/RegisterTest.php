@@ -22,6 +22,8 @@ class RegisterTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */
@@ -43,6 +45,31 @@ class RegisterTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         self::assertAttributeEquals(
             'Conceived at T3CON10',
             'title',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getDescriptionReturnsInitialValueForString()
+    {
+        self::assertSame(
+            '',
+            $this->subject->getDescription()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setDescriptionForStringSetsDescription()
+    {
+        $this->subject->setDescription('Conceived at T3CON10');
+
+        self::assertAttributeEquals(
+            'Conceived at T3CON10',
+            'description',
             $this->subject
         );
     }

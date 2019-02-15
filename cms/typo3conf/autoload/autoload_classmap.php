@@ -103,6 +103,10 @@ return array(
     'EBT\\ExtensionBuilder\\ViewHelpers\\SingularizeViewHelper' => $typo3InstallDir . 'typo3conf/ext/extension_builder/Classes/ViewHelpers/SingularizeViewHelper.php',
     'EBT\\ExtensionBuilder\\ViewHelpers\\SwitchViewHelper' => $typo3InstallDir . 'typo3conf/ext/extension_builder/Classes/ViewHelpers/SwitchViewHelper.php',
     'Jku\\JkuGdpr\\Controller\\RegisterController' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Controller/RegisterController.php',
+    'Jku\\JkuGdpr\\Domain\\Model\\PARegister' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Model/PARegister.php',
     'Jku\\JkuGdpr\\Domain\\Model\\Register' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Model/Register.php',
+    'Jku\\JkuGdpr\\Domain\\Model\\TOMRegister' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Model/TOMRegister.php',
+    'Jku\\JkuGdpr\\Domain\\Repository\\PARegisterRepository' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Repository/PARegisterRepository.php',
     'Jku\\JkuGdpr\\Domain\\Repository\\RegisterRepository' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Repository/RegisterRepository.php',
+    'Jku\\JkuGdpr\\Domain\\Repository\\TOMRegisterRepository' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Repository/TOMRegisterRepository.php',
 );

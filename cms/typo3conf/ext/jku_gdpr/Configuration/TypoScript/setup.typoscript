@@ -1,4 +1,8 @@
 
+
+
+
+
 # Module configuration
 module.tx_jkugdpr_web_jkugdprdashboard {
     persistence {
@@ -14,34 +18,4 @@ module.tx_jkugdpr_web_jkugdprdashboard {
     }
 }
 
-
-config.tx_extbase {
- persistence {
- classes {
- 
- // Überschreiben der Klassen
- Jku\JkuGdpr\Domain\Model\Register {
- subclasses {
- 0 = Jku\JkuGdpr\Domain\Model\TOMRegister
- 1 = Jku\JkuGdpr\Domain\Model\VARegister
- }
- }
-
- // Mapping
- Jku\JkuGdpr\Domain\Model\TOMRegister {
- mapping {
- recordType = 0
- tableName = tx_jkugdpr_domain_model_register
- }
- }
-
- Jku\JkuGdpr\Domain\Model\VARegister {
- mapping {
- recordType = 1
- tableName = tx_jkugdpr_domain_model_register
- }
- }
- 
- }
- }
-}
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

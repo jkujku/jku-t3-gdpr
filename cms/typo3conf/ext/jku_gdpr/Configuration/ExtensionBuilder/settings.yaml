@@ -1,6 +1,6 @@
 #
-# Extension Builder settings for extension jku_gdpr
-# generated 2019-02-11T20:39:00Z
+# Extension Builder settings for extension my_extkey
+# generated 2019-02-12T11:21:00Z
 #
 # See http://www.yaml.org/spec/1.2/spec.html
 #
@@ -48,12 +48,16 @@ overwriteSettings:
 
   Configuration:
     #TCA merge not possible - use overrides directory
-    #TypoScript: keep
+    TypoScript: merge
+
+    TCA:
+      Overrides: merge
 
   Resources:
     Private:
       #Language: merge
-      #Templates: keep
+      Backend:
+        Templates: keep
 
   user_extension.svg: keep
 
@@ -63,8 +67,10 @@ overwriteSettings:
 
   ext_tables.sql: merge
 
+  ext_typoscript_setup.typoscript: merge
+
 ## use static date attribute in xliff files ##
-#staticDateInXliffFiles: 2019-02-11T20:39:00Z
+#staticDateInXliffFiles: 2019-02-12T11:21:00Z
 
 ## skip docComment (license header) ##
 #skipDocComment

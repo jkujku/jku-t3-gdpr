@@ -14,7 +14,7 @@ return [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8mb4',
-                'dbname' => 't3gdpr',
+                'dbname' => 't3gdpr_typo3',
                 'driver' => 'mysqli',
                 'host' => '127.0.0.1',
                 'password' => 'password',
@@ -29,8 +29,8 @@ return [
     ],
     'EXT' => [
         'extConf' => [
-            'backend' => 'a:6:{s:9:"loginLogo";s:0:"";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:11:"backendLogo";s:0:"";s:14:"backendFavicon";s:0:"";}',
-            'extension_builder' => 'a:3:{s:15:"enableRoundtrip";s:1:"1";s:15:"backupExtension";s:1:"1";s:9:"backupDir";s:35:"uploads/tx_extensionbuilder/backups";}',
+            'backend' => 'a:6:{s:14:"backendFavicon";s:0:"";s:11:"backendLogo";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:19:"loginHighlightColor";s:0:"";s:9:"loginLogo";s:0:"";}',
+            'extension_builder' => 'a:3:{s:15:"enableRoundtrip";s:1:"1";s:15:"backupExtension";s:1:"0";s:9:"backupDir";s:35:"uploads/tx_extensionbuilder/backups";}',
             'extensionmanager' => 'a:2:{s:21:"automaticInstallation";s:1:"1";s:11:"offlineMode";s:1:"0";}',
         ],
     ],
@@ -45,7 +45,7 @@ return [
         ],
         'extension_builder' => [
             'backupDir' => 'uploads/tx_extensionbuilder/backups',
-            'backupExtension' => '1',
+            'backupExtension' => '0',
             'enableRoundtrip' => '1',
         ],
         'extensionmanager' => [

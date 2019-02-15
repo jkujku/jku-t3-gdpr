@@ -5,6 +5,8 @@ call_user_func(
     function()
     {
 
+
+
         if (TYPO3_MODE === 'BE') {
 
             \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
@@ -26,26 +28,11 @@ call_user_func(
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('jku_gdpr', 'Configuration/TypoScript', 'GDPR');
 
+
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jkugdpr_domain_model_register', 'EXT:jku_gdpr/Resources/Private/Language/locallang_csh_tx_jkugdpr_domain_model_register.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jkugdpr_domain_model_register');
 
     }
 );
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
-
-$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type'] = 'extbase_record_type';
-$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['columns']['extbase_record_type'] = [
-	'label' => 'Domain Object',
-     'config' => [
-         'type' => 'select',
-		 'renderType' => 'selectSingle',
-         'items' => [
-            ['undefined', '0'],
-            ['Organization', '\MyVendor\MyExtension\Domain\Model\Organization'],
-            ['Person', '\MyVendor\MyExtension\Domain\Model\Person'],
-            ['Company', '\MyVendor\MyExtension\Domain\Model\Company'],
-            ['ScientificInstitution', '\MyVendor\MyExtension\Domain\Model\ScientificInstitution']
-         ],
-         'default' => '\MyVendor\MyExtension\Domain\Model\Person'
-      ],];
-$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['0']['showitem'] .= ',extbase_record_type';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript('jku_gdpr', 'setup', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:jku_gdpr/Configuration/TypoScript/setup.typoscript">');

@@ -20,19 +20,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <table  class="tx_jkugdpr" >
 	<tr>
 		<th><f:translate key="tx_jkugdpr_domain_model_register.title" /></th>
-		<th> </th>
-		<th> </th>
+		<th><f:translate key="tx_jkugdpr_domain_model_register.description" /></th>
 	</tr>
 
 	<f:for each="{registers}" as="register">
 		<tr>
 			<td><f:link.action action="show" arguments="{register : register}"> {register.title}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{register : register}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{register : register}">Delete</f:link.action></td>
+			<td><f:link.action action="show" arguments="{register : register}"> {register.description}</f:link.action></td>
 		</tr>
 		</f:for>
 </table>
 
-<f:link.action action="new">New Register</f:link.action>
 	</f:section>
 </html>

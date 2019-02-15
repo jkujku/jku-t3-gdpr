@@ -21,7 +21,7 @@
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
-                    "addStarttimeEndtimeFields": true,
+                    "addStarttimeEndtimeFields": false,
                     "aggregateRoot": true,
                     "categorizable": false,
                     "description": "",
@@ -37,12 +37,125 @@
                             "allowedFileTypes": "",
                             "maxItems": "1",
                             "propertyDescription": "",
-                            "propertyIsExcludeField": true,
+                            "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": false,
+                            "propertyIsRequired": true,
                             "propertyName": "title",
                             "propertyType": "String",
                             "uid": "1177120238384"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "Text",
+                            "uid": "1427054455592"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    855,
+                    169
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "TOMRegister",
+                "objectsettings": {
+                    "addDeletedField": false,
+                    "addHiddenField": false,
+                    "addStarttimeEndtimeFields": false,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "tx_jkugdpr_domain_model_register",
+                    "parentClass": "\\Jku\\JkuGdpr\\Domain\\Model\\Register",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "404472029183"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "tomRegisterDescription",
+                            "propertyType": "Text",
+                            "uid": "1353419024403"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    85,
+                    186
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "PARegister",
+                "objectsettings": {
+                    "addDeletedField": false,
+                    "addHiddenField": false,
+                    "addStarttimeEndtimeFields": false,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "tx_jkugdpr_domain_model_register",
+                    "parentClass": "\\Jku\\JkuGdpr\\Domain\\Model\\Register",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "863345005525"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": false,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "paRegisterDescription",
+                            "propertyType": "Text",
+                            "uid": "225826491734"
                         }
                     ]
                 },
@@ -80,15 +193,15 @@
         },
         "extensionKey": "jku_gdpr",
         "name": "GDPR",
-        "originalExtensionKey": "",
-        "originalVendorName": "",
+        "originalExtensionKey": "jku_gdpr",
+        "originalVendorName": "Jku",
         "persons": [],
         "plugins": [],
         "vendorName": "Jku"
     },
     "wires": [],
     "log": {
-        "last_modified": "2019-02-11 08:44",
+        "last_modified": "2019-02-15 03:48",
         "extension_builder_version": "9.10.0",
         "be_user": " (1)"
     }

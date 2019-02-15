@@ -19,30 +19,30 @@ class TOMRegister extends \Jku\JkuGdpr\Domain\Model\Register
 {
 
     /**
-     * title2
+     * tomRegisterDescription
      * 
      * @var string
      */
-    protected $title2 = '';
+    protected $tomRegisterDescription = '';
 
     /**
-     * Returns the title2
+     * Returns the tomRegisterDescription
      * 
-     * @return string $title2
+     * @return string $tomRegisterDescription
      */
-    public function getTitle2()
+    public function getTomRegisterDescription()
     {
-        return $this->title2;
+        return $this->tomRegisterDescription;
     }
 
     /**
-     * Sets the title2
+     * Sets the tomRegisterDescription
      * 
-     * @param string $title2
+     * @param string $tomRegisterDescription
      * @return void
      */
-    public function setTitle2($title2)
+    public function setTomRegisterDescription($tomRegisterDescription)
     {
-        $this->title2 = $title2;
+        $this->tomRegisterDescription = $tomRegisterDescription;
     }
 }
