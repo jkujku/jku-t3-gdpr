@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-15T20:51:15Z" product-name="jku_gdpr">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-16T16:40:49Z" product-name="jku_gdpr">
 		<header/>
 		<body>
 			<trans-unit id="tx_jkugdpr_domain_model_register">
@@ -36,6 +36,27 @@
 			<trans-unit id="tx_jkugdpr_domain_model_pa.description">
 				<source>Description</source>
 			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_pa.employee">
+				<source>Employee</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_pa.data">
+				<source>Data</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_pa.affected_person">
+				<source>Affected Person</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_pa.purpose">
+				<source>Purpose</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_pa.legal_foundation">
+				<source>Legal Foundation</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_pa.data_receiver">
+				<source>Data Receiver</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_pa.deletion_deadline">
+				<source>Deletion Deadline</source>
+			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_tom">
 				<source>T O M</source>
 			</trans-unit>
@@ -45,26 +66,86 @@
 			<trans-unit id="tx_jkugdpr_domain_model_tom.description">
 				<source>Description</source>
 			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_tom.tom">
+				<source>Tom</source>
+			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_tom.employee">
 				<source>Employee</source>
 			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_tom.data">
 				<source>Data</source>
 			</trans-unit>
-			<trans-unit id="tx_jkugdpr_domain_model_category">
-				<source>Category</source>
+			<trans-unit id="tx_jkugdpr_domain_model_categoryemployee">
+				<source>Category Employee</source>
 			</trans-unit>
-			<trans-unit id="tx_jkugdpr_domain_model_category.title">
+			<trans-unit id="tx_jkugdpr_domain_model_categoryemployee.title">
 				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="tx_jkugdpr_domain_model_category.description">
+			<trans-unit id="tx_jkugdpr_domain_model_categoryemployee.description">
 				<source>Description</source>
 			</trans-unit>
-			<trans-unit id="tx_jkugdpr_domain_model_employeecategory">
-				<source>Employee Category</source>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydata">
+				<source>Category Data</source>
 			</trans-unit>
-			<trans-unit id="tx_jkugdpr_domain_model_datacategory">
-				<source>Data Category</source>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydata.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydata.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categoryaffectedperson">
+				<source>Category Affected Person</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categoryaffectedperson.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categoryaffectedperson.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorypurpose">
+				<source>Category Purpose</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorypurpose.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorypurpose.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydatareceiver">
+				<source>Category Data Receiver</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydatareceiver.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydatareceiver.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydeletiondeadline">
+				<source>Category Deletion Deadline</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydeletiondeadline.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorydeletiondeadline.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorylegalfoundation">
+				<source>Category Legal Foundation</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorylegalfoundation.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorylegalfoundation.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorytom">
+				<source>Category T O M</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorytom.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_categorytom.description">
+				<source>Description</source>
 			</trans-unit>
 		</body>
 	</file>

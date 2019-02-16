@@ -34,18 +34,25 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $description = '';
 
     /**
-     * employee
-     * 
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\EmployeeCategory>
-     */
-    protected $employee = null;
-
-    /**
      * data
      * 
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\DataCategory>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryData>
      */
     protected $data = null;
+
+    /**
+     * tom
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTOM>
+     */
+    protected $tom = null;
+
+    /**
+     * employee
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryEmployee>
+     */
+    protected $employee = null;
 
     /**
      * Returns the title
@@ -109,60 +116,18 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
+        $this->tom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->employee = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->data = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
-     * Adds a EmployeeCategory
-     * 
-     * @param \Jku\JkuGdpr\Domain\Model\EmployeeCategory $employee
-     * @return void
-     */
-    public function addEmployee(\Jku\JkuGdpr\Domain\Model\EmployeeCategory $employee)
-    {
-        $this->employee->attach($employee);
-    }
-
-    /**
-     * Removes a EmployeeCategory
-     * 
-     * @param \Jku\JkuGdpr\Domain\Model\EmployeeCategory $employeeToRemove The EmployeeCategory to be removed
-     * @return void
-     */
-    public function removeEmployee(\Jku\JkuGdpr\Domain\Model\EmployeeCategory $employeeToRemove)
-    {
-        $this->employee->detach($employeeToRemove);
-    }
-
-    /**
-     * Returns the employee
-     * 
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\EmployeeCategory> $employee
-     */
-    public function getEmployee()
-    {
-        return $this->employee;
-    }
-
-    /**
-     * Sets the employee
-     * 
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\EmployeeCategory> $employee
-     * @return void
-     */
-    public function setEmployee(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $employee)
-    {
-        $this->employee = $employee;
-    }
-
-    /**
      * Adds a DataCategory
      * 
-     * @param \Jku\JkuGdpr\Domain\Model\DataCategory $datum
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryData $datum
      * @return void
      */
-    public function addDatum(\Jku\JkuGdpr\Domain\Model\DataCategory $datum)
+    public function addDatum(\Jku\JkuGdpr\Domain\Model\CategoryData $datum)
     {
         $this->data->attach($datum);
     }
@@ -170,10 +135,10 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Removes a DataCategory
      * 
-     * @param \Jku\JkuGdpr\Domain\Model\DataCategory $datumToRemove The DataCategory to be removed
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryData $datumToRemove The CategoryData to be removed
      * @return void
      */
-    public function removeDatum(\Jku\JkuGdpr\Domain\Model\DataCategory $datumToRemove)
+    public function removeDatum(\Jku\JkuGdpr\Domain\Model\CategoryData $datumToRemove)
     {
         $this->data->detach($datumToRemove);
     }
@@ -181,7 +146,7 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the data
      * 
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\DataCategory> $data
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryData> data
      */
     public function getData()
     {
@@ -191,11 +156,97 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the data
      * 
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\DataCategory> $data
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryData> $data
      * @return void
      */
     public function setData(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $data)
     {
         $this->data = $data;
+    }
+
+    /**
+     * Adds a CategoryTOM
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryTOM $tom
+     * @return void
+     */
+    public function addTom(\Jku\JkuGdpr\Domain\Model\CategoryTOM $tom)
+    {
+        $this->tom->attach($tom);
+    }
+
+    /**
+     * Removes a CategoryTOM
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryTOM $tomToRemove The CategoryTOM to be removed
+     * @return void
+     */
+    public function removeTom(\Jku\JkuGdpr\Domain\Model\CategoryTOM $tomToRemove)
+    {
+        $this->tom->detach($tomToRemove);
+    }
+
+    /**
+     * Returns the tom
+     * 
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTOM> $tom
+     */
+    public function getTom()
+    {
+        return $this->tom;
+    }
+
+    /**
+     * Sets the tom
+     * 
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTOM> $tom
+     * @return void
+     */
+    public function setTom(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tom)
+    {
+        $this->tom = $tom;
+    }
+
+    /**
+     * Adds a CategoryEmployee
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryEmployee $employee
+     * @return void
+     */
+    public function addEmployee(\Jku\JkuGdpr\Domain\Model\CategoryEmployee $employee)
+    {
+        $this->employee->attach($employee);
+    }
+
+    /**
+     * Removes a CategoryEmployee
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryEmployee $employeeToRemove The CategoryEmployee to be removed
+     * @return void
+     */
+    public function removeEmployee(\Jku\JkuGdpr\Domain\Model\CategoryEmployee $employeeToRemove)
+    {
+        $this->employee->detach($employeeToRemove);
+    }
+
+    /**
+     * Returns the employee
+     * 
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryEmployee> $employee
+     */
+    public function getEmployee()
+    {
+        return $this->employee;
+    }
+
+    /**
+     * Sets the employee
+     * 
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryEmployee> $employee
+     * @return void
+     */
+    public function setEmployee(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $employee)
+    {
+        $this->employee = $employee;
     }
 }

@@ -71,4 +71,445 @@ class PATest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
             $this->subject
         );
     }
+
+    /**
+     * @test
+     */
+    public function getEmployeeReturnsInitialValueForCategoryEmployee()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getEmployee()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setEmployeeForObjectStorageContainingCategoryEmployeeSetsEmployee()
+    {
+        $employee = new \Jku\JkuGdpr\Domain\Model\CategoryEmployee();
+        $objectStorageHoldingExactlyOneEmployee = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneEmployee->attach($employee);
+        $this->subject->setEmployee($objectStorageHoldingExactlyOneEmployee);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneEmployee,
+            'employee',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addEmployeeToObjectStorageHoldingEmployee()
+    {
+        $employee = new \Jku\JkuGdpr\Domain\Model\CategoryEmployee();
+        $employeeObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $employeeObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($employee));
+        $this->inject($this->subject, 'employee', $employeeObjectStorageMock);
+
+        $this->subject->addEmployee($employee);
+    }
+
+    /**
+     * @test
+     */
+    public function removeEmployeeFromObjectStorageHoldingEmployee()
+    {
+        $employee = new \Jku\JkuGdpr\Domain\Model\CategoryEmployee();
+        $employeeObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $employeeObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($employee));
+        $this->inject($this->subject, 'employee', $employeeObjectStorageMock);
+
+        $this->subject->removeEmployee($employee);
+    }
+
+    /**
+     * @test
+     */
+    public function getDataReturnsInitialValueForCategoryData()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getData()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setDataForObjectStorageContainingCategoryDataSetsData()
+    {
+        $datum = new \Jku\JkuGdpr\Domain\Model\CategoryData();
+        $objectStorageHoldingExactlyOneData = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneData->attach($datum);
+        $this->subject->setData($objectStorageHoldingExactlyOneData);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneData,
+            'data',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addDatumToObjectStorageHoldingData()
+    {
+        $datum = new \Jku\JkuGdpr\Domain\Model\CategoryData();
+        $dataObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $dataObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($datum));
+        $this->inject($this->subject, 'data', $dataObjectStorageMock);
+
+        $this->subject->addDatum($datum);
+    }
+
+    /**
+     * @test
+     */
+    public function removeDatumFromObjectStorageHoldingData()
+    {
+        $datum = new \Jku\JkuGdpr\Domain\Model\CategoryData();
+        $dataObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $dataObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($datum));
+        $this->inject($this->subject, 'data', $dataObjectStorageMock);
+
+        $this->subject->removeDatum($datum);
+    }
+
+    /**
+     * @test
+     */
+    public function getAffectedPersonReturnsInitialValueForCategoryAffectedPerson()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getAffectedPerson()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setAffectedPersonForObjectStorageContainingCategoryAffectedPersonSetsAffectedPerson()
+    {
+        $affectedPerson = new \Jku\JkuGdpr\Domain\Model\CategoryAffectedPerson();
+        $objectStorageHoldingExactlyOneAffectedPerson = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneAffectedPerson->attach($affectedPerson);
+        $this->subject->setAffectedPerson($objectStorageHoldingExactlyOneAffectedPerson);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneAffectedPerson,
+            'affectedPerson',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addAffectedPersonToObjectStorageHoldingAffectedPerson()
+    {
+        $affectedPerson = new \Jku\JkuGdpr\Domain\Model\CategoryAffectedPerson();
+        $affectedPersonObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $affectedPersonObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($affectedPerson));
+        $this->inject($this->subject, 'affectedPerson', $affectedPersonObjectStorageMock);
+
+        $this->subject->addAffectedPerson($affectedPerson);
+    }
+
+    /**
+     * @test
+     */
+    public function removeAffectedPersonFromObjectStorageHoldingAffectedPerson()
+    {
+        $affectedPerson = new \Jku\JkuGdpr\Domain\Model\CategoryAffectedPerson();
+        $affectedPersonObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $affectedPersonObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($affectedPerson));
+        $this->inject($this->subject, 'affectedPerson', $affectedPersonObjectStorageMock);
+
+        $this->subject->removeAffectedPerson($affectedPerson);
+    }
+
+    /**
+     * @test
+     */
+    public function getPurposeReturnsInitialValueForCategoryPurpose()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getPurpose()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setPurposeForObjectStorageContainingCategoryPurposeSetsPurpose()
+    {
+        $purpose = new \Jku\JkuGdpr\Domain\Model\CategoryPurpose();
+        $objectStorageHoldingExactlyOnePurpose = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOnePurpose->attach($purpose);
+        $this->subject->setPurpose($objectStorageHoldingExactlyOnePurpose);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOnePurpose,
+            'purpose',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addPurposeToObjectStorageHoldingPurpose()
+    {
+        $purpose = new \Jku\JkuGdpr\Domain\Model\CategoryPurpose();
+        $purposeObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $purposeObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($purpose));
+        $this->inject($this->subject, 'purpose', $purposeObjectStorageMock);
+
+        $this->subject->addPurpose($purpose);
+    }
+
+    /**
+     * @test
+     */
+    public function removePurposeFromObjectStorageHoldingPurpose()
+    {
+        $purpose = new \Jku\JkuGdpr\Domain\Model\CategoryPurpose();
+        $purposeObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $purposeObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($purpose));
+        $this->inject($this->subject, 'purpose', $purposeObjectStorageMock);
+
+        $this->subject->removePurpose($purpose);
+    }
+
+    /**
+     * @test
+     */
+    public function getLegalFoundationReturnsInitialValueForCategoryLegalFoundation()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getLegalFoundation()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setLegalFoundationForObjectStorageContainingCategoryLegalFoundationSetsLegalFoundation()
+    {
+        $legalFoundation = new \Jku\JkuGdpr\Domain\Model\CategoryLegalFoundation();
+        $objectStorageHoldingExactlyOneLegalFoundation = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneLegalFoundation->attach($legalFoundation);
+        $this->subject->setLegalFoundation($objectStorageHoldingExactlyOneLegalFoundation);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneLegalFoundation,
+            'legalFoundation',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addLegalFoundationToObjectStorageHoldingLegalFoundation()
+    {
+        $legalFoundation = new \Jku\JkuGdpr\Domain\Model\CategoryLegalFoundation();
+        $legalFoundationObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $legalFoundationObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($legalFoundation));
+        $this->inject($this->subject, 'legalFoundation', $legalFoundationObjectStorageMock);
+
+        $this->subject->addLegalFoundation($legalFoundation);
+    }
+
+    /**
+     * @test
+     */
+    public function removeLegalFoundationFromObjectStorageHoldingLegalFoundation()
+    {
+        $legalFoundation = new \Jku\JkuGdpr\Domain\Model\CategoryLegalFoundation();
+        $legalFoundationObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $legalFoundationObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($legalFoundation));
+        $this->inject($this->subject, 'legalFoundation', $legalFoundationObjectStorageMock);
+
+        $this->subject->removeLegalFoundation($legalFoundation);
+    }
+
+    /**
+     * @test
+     */
+    public function getDataReceiverReturnsInitialValueForCategoryDataReceiver()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getDataReceiver()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setDataReceiverForObjectStorageContainingCategoryDataReceiverSetsDataReceiver()
+    {
+        $dataReceiver = new \Jku\JkuGdpr\Domain\Model\CategoryDataReceiver();
+        $objectStorageHoldingExactlyOneDataReceiver = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneDataReceiver->attach($dataReceiver);
+        $this->subject->setDataReceiver($objectStorageHoldingExactlyOneDataReceiver);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneDataReceiver,
+            'dataReceiver',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addDataReceiverToObjectStorageHoldingDataReceiver()
+    {
+        $dataReceiver = new \Jku\JkuGdpr\Domain\Model\CategoryDataReceiver();
+        $dataReceiverObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $dataReceiverObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($dataReceiver));
+        $this->inject($this->subject, 'dataReceiver', $dataReceiverObjectStorageMock);
+
+        $this->subject->addDataReceiver($dataReceiver);
+    }
+
+    /**
+     * @test
+     */
+    public function removeDataReceiverFromObjectStorageHoldingDataReceiver()
+    {
+        $dataReceiver = new \Jku\JkuGdpr\Domain\Model\CategoryDataReceiver();
+        $dataReceiverObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $dataReceiverObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($dataReceiver));
+        $this->inject($this->subject, 'dataReceiver', $dataReceiverObjectStorageMock);
+
+        $this->subject->removeDataReceiver($dataReceiver);
+    }
+
+    /**
+     * @test
+     */
+    public function getDeletionDeadlineReturnsInitialValueForCategoryDeletionDeadline()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getDeletionDeadline()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setDeletionDeadlineForObjectStorageContainingCategoryDeletionDeadlineSetsDeletionDeadline()
+    {
+        $deletionDeadline = new \Jku\JkuGdpr\Domain\Model\CategoryDeletionDeadline();
+        $objectStorageHoldingExactlyOneDeletionDeadline = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneDeletionDeadline->attach($deletionDeadline);
+        $this->subject->setDeletionDeadline($objectStorageHoldingExactlyOneDeletionDeadline);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneDeletionDeadline,
+            'deletionDeadline',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addDeletionDeadlineToObjectStorageHoldingDeletionDeadline()
+    {
+        $deletionDeadline = new \Jku\JkuGdpr\Domain\Model\CategoryDeletionDeadline();
+        $deletionDeadlineObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $deletionDeadlineObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($deletionDeadline));
+        $this->inject($this->subject, 'deletionDeadline', $deletionDeadlineObjectStorageMock);
+
+        $this->subject->addDeletionDeadline($deletionDeadline);
+    }
+
+    /**
+     * @test
+     */
+    public function removeDeletionDeadlineFromObjectStorageHoldingDeletionDeadline()
+    {
+        $deletionDeadline = new \Jku\JkuGdpr\Domain\Model\CategoryDeletionDeadline();
+        $deletionDeadlineObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $deletionDeadlineObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($deletionDeadline));
+        $this->inject($this->subject, 'deletionDeadline', $deletionDeadlineObjectStorageMock);
+
+        $this->subject->removeDeletionDeadline($deletionDeadline);
+    }
 }

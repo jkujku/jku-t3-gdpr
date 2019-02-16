@@ -18,10 +18,10 @@ return [
         'iconfile' => 'EXT:jku_gdpr/Resources/Public/Icons/tx_jkugdpr_domain_model_tom.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, employee, data',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, tom, employee, data',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, employee, data'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, tom, employee, data'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -104,13 +104,39 @@ return [
                 'eval' => 'trim'
             ]
         ],
+        'tom' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_tom.tom',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_jkugdpr_domain_model_categorytom',
+                'MM' => 'tx_jkugdpr_tom_categorytom_mm',
+                'size' => 10,
+                'autoSizeMax' => 30,
+                'maxitems' => 9999,
+                'multiple' => 0,
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
+                    ],
+                    'addRecord' => [
+                        'disabled' => false,
+                    ],
+                    'listModule' => [
+                        'disabled' => true,
+                    ],
+                ],
+            ],
+            
+        ],
         'employee' => [
             'exclude' => false,
             'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_tom.employee',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_jkugdpr_domain_model_category',
+                'foreign_table' => 'tx_jkugdpr_domain_model_categoryemployee',
                 'MM' => 'tx_jkugdpr_tom_employeecategory_mm',
                 'size' => 10,
                 'autoSizeMax' => 30,
@@ -136,7 +162,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_jkugdpr_domain_model_category',
+                'foreign_table' => 'tx_jkugdpr_domain_model_categorydata',
                 'MM' => 'tx_jkugdpr_tom_datacategory_mm',
                 'size' => 10,
                 'autoSizeMax' => 30,

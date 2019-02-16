@@ -75,7 +75,70 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function getEmployeeReturnsInitialValueForEmployeeCategory()
+    public function getTomReturnsInitialValueForCategoryTOM()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getTom()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setTomForObjectStorageContainingCategoryTOMSetsTom()
+    {
+        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTOM();
+        $objectStorageHoldingExactlyOneTom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneTom->attach($tom);
+        $this->subject->setTom($objectStorageHoldingExactlyOneTom);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneTom,
+            'tom',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addTomToObjectStorageHoldingTom()
+    {
+        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTOM();
+        $tomObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $tomObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($tom));
+        $this->inject($this->subject, 'tom', $tomObjectStorageMock);
+
+        $this->subject->addTom($tom);
+    }
+
+    /**
+     * @test
+     */
+    public function removeTomFromObjectStorageHoldingTom()
+    {
+        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTOM();
+        $tomObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $tomObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($tom));
+        $this->inject($this->subject, 'tom', $tomObjectStorageMock);
+
+        $this->subject->removeTom($tom);
+    }
+
+    /**
+     * @test
+     */
+    public function getEmployeeReturnsInitialValueForCategoryEmployee()
     {
         $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         self::assertEquals(
@@ -87,9 +150,9 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function setEmployeeForObjectStorageContainingEmployeeCategorySetsEmployee()
+    public function setEmployeeForObjectStorageContainingCategoryEmployeeSetsEmployee()
     {
-        $employee = new \Jku\JkuGdpr\Domain\Model\EmployeeCategory();
+        $employee = new \Jku\JkuGdpr\Domain\Model\CategoryEmployee();
         $objectStorageHoldingExactlyOneEmployee = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneEmployee->attach($employee);
         $this->subject->setEmployee($objectStorageHoldingExactlyOneEmployee);
@@ -106,7 +169,7 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function addEmployeeToObjectStorageHoldingEmployee()
     {
-        $employee = new \Jku\JkuGdpr\Domain\Model\EmployeeCategory();
+        $employee = new \Jku\JkuGdpr\Domain\Model\CategoryEmployee();
         $employeeObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -123,7 +186,7 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function removeEmployeeFromObjectStorageHoldingEmployee()
     {
-        $employee = new \Jku\JkuGdpr\Domain\Model\EmployeeCategory();
+        $employee = new \Jku\JkuGdpr\Domain\Model\CategoryEmployee();
         $employeeObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()
@@ -138,7 +201,7 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function getDataReturnsInitialValueForDataCategory()
+    public function getDataReturnsInitialValueForCategoryData()
     {
         $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         self::assertEquals(
@@ -150,9 +213,9 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function setDataForObjectStorageContainingDataCategorySetsData()
+    public function setDataForObjectStorageContainingCategoryDataSetsData()
     {
-        $datum = new \Jku\JkuGdpr\Domain\Model\DataCategory();
+        $datum = new \Jku\JkuGdpr\Domain\Model\CategoryData();
         $objectStorageHoldingExactlyOneData = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneData->attach($datum);
         $this->subject->setData($objectStorageHoldingExactlyOneData);
@@ -169,7 +232,7 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function addDatumToObjectStorageHoldingData()
     {
-        $datum = new \Jku\JkuGdpr\Domain\Model\DataCategory();
+        $datum = new \Jku\JkuGdpr\Domain\Model\CategoryData();
         $dataObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -186,7 +249,7 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function removeDatumFromObjectStorageHoldingData()
     {
-        $datum = new \Jku\JkuGdpr\Domain\Model\DataCategory();
+        $datum = new \Jku\JkuGdpr\Domain\Model\CategoryData();
         $dataObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()

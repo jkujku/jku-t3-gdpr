@@ -1,5 +1,6 @@
 <?php
 defined('TYPO3_MODE') || die();
+
 if (!isset($GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type'])) {
     // no type field defined, so we define it here. This will only happen the first time the extension is installed!!
     $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type'] = 'tx_extbase_type';
