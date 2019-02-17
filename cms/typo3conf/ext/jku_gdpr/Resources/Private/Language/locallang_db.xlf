@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-17T16:43:11Z" product-name="jku_gdpr">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-17T22:40:08Z" product-name="jku_gdpr">
 		<header/>
 		<body>
 			<trans-unit id="tx_jkugdpr_domain_model_register">
@@ -38,6 +38,9 @@
 			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_paregister.pa_register_description">
 				<source>Pa Register Description</source>
+			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_paregister.pas">
+				<source>Pas</source>
 			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_register.tx_extbase_type.Tx_JkuGdpr_PARegister">
 				<source>GDPR PARegister</source>

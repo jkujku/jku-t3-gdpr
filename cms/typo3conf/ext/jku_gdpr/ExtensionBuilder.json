@@ -172,7 +172,19 @@
                     ]
                 },
                 "relationGroup": {
-                    "relations": []
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "pas",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "renderType": "selectMultipleSideBySide",
+                            "uid": "1175122153975"
+                        }
+                    ]
                 }
             }
         },
@@ -1463,10 +1475,22 @@
                 "terminal": "SOURCES",
                 "uid": "988390366090"
             }
+        },
+        {
+            "src": {
+                "moduleId": 2,
+                "terminal": "relationWire_0",
+                "uid": "1175122153975"
+            },
+            "tgt": {
+                "moduleId": 3,
+                "terminal": "SOURCES",
+                "uid": "1549136735258"
+            }
         }
     ],
     "log": {
-        "last_modified": "2019-02-17 04:43",
+        "last_modified": "2019-02-17 10:40",
         "extension_builder_version": "9.10.0",
         "be_user": " (1)"
     }

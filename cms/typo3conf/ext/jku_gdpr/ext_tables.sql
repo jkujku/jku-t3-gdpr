@@ -26,6 +26,7 @@ CREATE TABLE tx_jkugdpr_domain_model_register (
 CREATE TABLE tx_jkugdpr_domain_model_register (
 
 	pa_register_description text,
+	pas int(11) unsigned DEFAULT '0' NOT NULL,
 
 );
 
@@ -189,6 +190,20 @@ CREATE TABLE tx_jkugdpr_domain_model_categorydsfa (
 # Table structure for table 'tx_jkugdpr_tomregister_tom_mm'
 #
 CREATE TABLE tx_jkugdpr_tomregister_tom_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	PRIMARY KEY (uid_local,uid_foreign),
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_jkugdpr_paregister_pa_mm'
+#
+CREATE TABLE tx_jkugdpr_paregister_pa_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

@@ -101,6 +101,32 @@ $tmp_jku_gdpr_columns = [
             'eval' => 'trim'
         ]
     ],
+    'pas' => [
+        'exclude' => true,
+        'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_paregister.pas',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectMultipleSideBySide',
+            'foreign_table' => 'tx_jkugdpr_domain_model_pa',
+            'MM' => 'tx_jkugdpr_paregister_pa_mm',
+            'size' => 10,
+            'autoSizeMax' => 30,
+            'maxitems' => 9999,
+            'multiple' => 0,
+            'fieldControl' => [
+                'editPopup' => [
+                    'disabled' => false,
+                ],
+                'addRecord' => [
+                    'disabled' => false,
+                ],
+                'listModule' => [
+                    'disabled' => true,
+                ],
+            ],
+        ],
+        
+    ],
 
 ];
 
@@ -118,7 +144,7 @@ if (isset($GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGd
     $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_PARegister']['showitem'] = '';
 }
 $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_PARegister']['showitem'] .= ',--div--;LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_paregister,';
-$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_PARegister']['showitem'] .= 'pa_register_description';
+$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['types']['Tx_JkuGdpr_PARegister']['showitem'] .= 'pa_register_description, pas';
 
 $GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['columns'][$GLOBALS['TCA']['tx_jkugdpr_domain_model_register']['ctrl']['type']]['config']['items'][] = ['LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_register.tx_extbase_type.Tx_JkuGdpr_PARegister','Tx_JkuGdpr_PARegister'];
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
