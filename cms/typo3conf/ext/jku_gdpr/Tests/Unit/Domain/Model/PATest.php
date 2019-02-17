@@ -512,4 +512,156 @@ class PATest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 
         $this->subject->removeDeletionDeadline($deletionDeadline);
     }
+
+    /**
+     * @test
+     */
+    public function getTomReturnsInitialValueForTOM()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getTom()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setTomForObjectStorageContainingTOMSetsTom()
+    {
+        $tom = new \Jku\JkuGdpr\Domain\Model\TOM();
+        $objectStorageHoldingExactlyOneTom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneTom->attach($tom);
+        $this->subject->setTom($objectStorageHoldingExactlyOneTom);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneTom,
+            'tom',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addTomToObjectStorageHoldingTom()
+    {
+        $tom = new \Jku\JkuGdpr\Domain\Model\TOM();
+        $tomObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $tomObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($tom));
+        $this->inject($this->subject, 'tom', $tomObjectStorageMock);
+
+        $this->subject->addTom($tom);
+    }
+
+    /**
+     * @test
+     */
+    public function removeTomFromObjectStorageHoldingTom()
+    {
+        $tom = new \Jku\JkuGdpr\Domain\Model\TOM();
+        $tomObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $tomObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($tom));
+        $this->inject($this->subject, 'tom', $tomObjectStorageMock);
+
+        $this->subject->removeTom($tom);
+    }
+
+    /**
+     * @test
+     */
+    public function getStateReturnsInitialValueForState()
+    {
+        self::assertEquals(
+            null,
+            $this->subject->getState()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setStateForStateSetsState()
+    {
+        $stateFixture = new \Jku\JkuGdpr\Domain\Model\State();
+        $this->subject->setState($stateFixture);
+
+        self::assertAttributeEquals(
+            $stateFixture,
+            'state',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getDsfaReturnsInitialValueForCategoryDsfa()
+    {
+        $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        self::assertEquals(
+            $newObjectStorage,
+            $this->subject->getDsfa()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setDsfaForObjectStorageContainingCategoryDsfaSetsDsfa()
+    {
+        $dsfa = new \Jku\JkuGdpr\Domain\Model\CategoryDsfa();
+        $objectStorageHoldingExactlyOneDsfa = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $objectStorageHoldingExactlyOneDsfa->attach($dsfa);
+        $this->subject->setDsfa($objectStorageHoldingExactlyOneDsfa);
+
+        self::assertAttributeEquals(
+            $objectStorageHoldingExactlyOneDsfa,
+            'dsfa',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function addDsfaToObjectStorageHoldingDsfa()
+    {
+        $dsfa = new \Jku\JkuGdpr\Domain\Model\CategoryDsfa();
+        $dsfaObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $dsfaObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($dsfa));
+        $this->inject($this->subject, 'dsfa', $dsfaObjectStorageMock);
+
+        $this->subject->addDsfa($dsfa);
+    }
+
+    /**
+     * @test
+     */
+    public function removeDsfaFromObjectStorageHoldingDsfa()
+    {
+        $dsfa = new \Jku\JkuGdpr\Domain\Model\CategoryDsfa();
+        $dsfaObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $dsfaObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($dsfa));
+        $this->inject($this->subject, 'dsfa', $dsfaObjectStorageMock);
+
+        $this->subject->removeDsfa($dsfa);
+    }
 }

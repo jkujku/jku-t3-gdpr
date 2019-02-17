@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-16T16:40:49Z" product-name="jku_gdpr">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-17T16:43:11Z" product-name="jku_gdpr">
 		<header/>
 		<body>
 			<trans-unit id="title.description">
@@ -8,6 +8,9 @@
 			</trans-unit>
 			<trans-unit id="description.description">
 				<source>description</source>
+			</trans-unit>
+			<trans-unit id="gdpr_articel.description">
+				<source>gdprArticel</source>
 			</trans-unit>
 		</body>
 	</file>

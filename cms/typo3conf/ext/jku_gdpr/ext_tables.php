@@ -13,7 +13,7 @@ call_user_func(
                 'dashboard', // Submodule key
                 '', // Position
                 [
-                    'Register' => 'list, show','PA' => 'list, show','TOM' => 'list, show','CategoryEmployee' => 'list, show','CategoryData' => 'list, show','CategoryAffectedPerson' => 'list, show','CategoryPurpose' => 'list, show','CategoryDataReceiver' => 'list, show','CategoryDeletionDeadline' => 'list, show','CategoryLegalFoundation' => 'list, show','CategoryTOM' => 'list, show',
+                    'Register' => 'list, show','PA' => 'list, show','TOM' => 'list, show','CategoryEmployee' => 'list, show','CategoryData' => 'list, show','CategoryAffectedPerson' => 'list, show','CategoryPurpose' => 'list, show','CategoryDataReceiver' => 'list, show','CategoryDeletionDeadline' => 'list, show','CategoryLegalFoundation' => 'list, show','CategoryTom' => 'list, show','Person' => 'list, show','CategoryTomGdpr' => 'list, show','CategoryDsfa' => 'list, show',
                 ],
                 [
                     'access' => 'user,group',
@@ -58,6 +58,18 @@ call_user_func(
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jkugdpr_domain_model_categorytom', 'EXT:jku_gdpr/Resources/Private/Language/locallang_csh_tx_jkugdpr_domain_model_categorytom.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jkugdpr_domain_model_categorytom');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jkugdpr_domain_model_person', 'EXT:jku_gdpr/Resources/Private/Language/locallang_csh_tx_jkugdpr_domain_model_person.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jkugdpr_domain_model_person');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jkugdpr_domain_model_categorytomgdpr', 'EXT:jku_gdpr/Resources/Private/Language/locallang_csh_tx_jkugdpr_domain_model_categorytomgdpr.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jkugdpr_domain_model_categorytomgdpr');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jkugdpr_domain_model_state', 'EXT:jku_gdpr/Resources/Private/Language/locallang_csh_tx_jkugdpr_domain_model_state.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jkugdpr_domain_model_state');
+
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_jkugdpr_domain_model_categorydsfa', 'EXT:jku_gdpr/Resources/Private/Language/locallang_csh_tx_jkugdpr_domain_model_categorydsfa.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_jkugdpr_domain_model_categorydsfa');
 
     }
 );

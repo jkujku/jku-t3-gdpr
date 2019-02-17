@@ -83,6 +83,27 @@ class PA extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $deletionDeadline = null;
 
     /**
+     * tom
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\TOM>
+     */
+    protected $tom = null;
+
+    /**
+     * state
+     * 
+     * @var \Jku\JkuGdpr\Domain\Model\State
+     */
+    protected $state = null;
+
+    /**
+     * dsfa
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryDsfa>
+     */
+    protected $dsfa = null;
+
+    /**
      * Returns the title
      * 
      * @return string $title
@@ -151,6 +172,8 @@ class PA extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->legalFoundation = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->dataReceiver = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->deletionDeadline = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->tom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->dsfa = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -452,5 +475,112 @@ class PA extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setDeletionDeadline(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $deletionDeadline)
     {
         $this->deletionDeadline = $deletionDeadline;
+    }
+
+    /**
+     * Adds a TOM
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\TOM $tom
+     * @return void
+     */
+    public function addTom(\Jku\JkuGdpr\Domain\Model\TOM $tom)
+    {
+        $this->tom->attach($tom);
+    }
+
+    /**
+     * Removes a TOM
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\TOM $tomToRemove The TOM to be removed
+     * @return void
+     */
+    public function removeTom(\Jku\JkuGdpr\Domain\Model\TOM $tomToRemove)
+    {
+        $this->tom->detach($tomToRemove);
+    }
+
+    /**
+     * Returns the tom
+     * 
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\TOM> $tom
+     */
+    public function getTom()
+    {
+        return $this->tom;
+    }
+
+    /**
+     * Sets the tom
+     * 
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\TOM> $tom
+     * @return void
+     */
+    public function setTom(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tom)
+    {
+        $this->tom = $tom;
+    }
+
+    /**
+     * Returns the state
+     * 
+     * @return \Jku\JkuGdpr\Domain\Model\State $state
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Sets the state
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\State $state
+     * @return void
+     */
+    public function setState(\Jku\JkuGdpr\Domain\Model\State $state)
+    {
+        $this->state = $state;
+    }
+
+    /**
+     * Adds a CategoryDsfa
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryDsfa $dsfa
+     * @return void
+     */
+    public function addDsfa(\Jku\JkuGdpr\Domain\Model\CategoryDsfa $dsfa)
+    {
+        $this->dsfa->attach($dsfa);
+    }
+
+    /**
+     * Removes a CategoryDsfa
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryDsfa $dsfaToRemove The CategoryDsfa to be removed
+     * @return void
+     */
+    public function removeDsfa(\Jku\JkuGdpr\Domain\Model\CategoryDsfa $dsfaToRemove)
+    {
+        $this->dsfa->detach($dsfaToRemove);
+    }
+
+    /**
+     * Returns the dsfa
+     * 
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryDsfa> $dsfa
+     */
+    public function getDsfa()
+    {
+        return $this->dsfa;
+    }
+
+    /**
+     * Sets the dsfa
+     * 
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryDsfa> $dsfa
+     * @return void
+     */
+    public function setDsfa(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $dsfa)
+    {
+        $this->dsfa = $dsfa;
     }
 }

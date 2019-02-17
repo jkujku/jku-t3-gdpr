@@ -13,22 +13,23 @@ namespace Jku\JkuGdpr\Controller;
  *
  ***/
 /**
- * CategoryTOMController
+ * CategoryTomController
  */
-class CategoryTOMController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class CategoryTomController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * categoryTOMRepository
+     * categoryTomRepository
      * 
-     * @var \Jku\JkuGdpr\Domain\Repository\CategoryTOMRepository
+     * @var \Jku\JkuGdpr\Domain\Repository\CategoryTomRepository
      * @inject
      */
-    protected $categoryTOMRepository = null;
+    protected $categoryTomRepository = null;
 
     /**
      * action list
      * 
+     * @param Jku\JkuGdpr\Domain\Model\CategoryTom
      * @return void
      */
     public function listAction()
@@ -40,10 +41,10 @@ class CategoryTOMController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     /**
      * action show
      * 
-     * @param \Jku\JkuGdpr\Domain\Model\CategoryTOM $categoryTOM
+     * @param Jku\JkuGdpr\Domain\Model\CategoryTom
      * @return void
      */
-    public function showAction(\Jku\JkuGdpr\Domain\Model\CategoryTOM $categoryTOM)
+    public function showAction(\Jku\JkuGdpr\Domain\Model\CategoryTom $categoryTom)
     {
         $this->view->assign('categoryTOM', $categoryTOM);
     }

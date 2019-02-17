@@ -75,7 +75,57 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function getTomReturnsInitialValueForCategoryTOM()
+    public function getTechnicalReturnsInitialValueForBool()
+    {
+        self::assertSame(
+            false,
+            $this->subject->getTechnical()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setTechnicalForBoolSetsTechnical()
+    {
+        $this->subject->setTechnical(true);
+
+        self::assertAttributeEquals(
+            true,
+            'technical',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getAdministrativeReturnsInitialValueForBool()
+    {
+        self::assertSame(
+            false,
+            $this->subject->getAdministrative()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setAdministrativeForBoolSetsAdministrative()
+    {
+        $this->subject->setAdministrative(true);
+
+        self::assertAttributeEquals(
+            true,
+            'administrative',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getTomReturnsInitialValueForCategoryTom()
     {
         $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         self::assertEquals(
@@ -87,9 +137,9 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
-    public function setTomForObjectStorageContainingCategoryTOMSetsTom()
+    public function setTomForObjectStorageContainingCategoryTomSetsTom()
     {
-        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTOM();
+        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTom();
         $objectStorageHoldingExactlyOneTom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneTom->attach($tom);
         $this->subject->setTom($objectStorageHoldingExactlyOneTom);
@@ -106,7 +156,7 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function addTomToObjectStorageHoldingTom()
     {
-        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTOM();
+        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTom();
         $tomObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -123,7 +173,7 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function removeTomFromObjectStorageHoldingTom()
     {
-        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTOM();
+        $tom = new \Jku\JkuGdpr\Domain\Model\CategoryTom();
         $tomObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()
@@ -259,5 +309,31 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         $this->inject($this->subject, 'data', $dataObjectStorageMock);
 
         $this->subject->removeDatum($datum);
+    }
+
+    /**
+     * @test
+     */
+    public function getStateReturnsInitialValueForState()
+    {
+        self::assertEquals(
+            null,
+            $this->subject->getState()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setStateForStateSetsState()
+    {
+        $stateFixture = new \Jku\JkuGdpr\Domain\Model\State();
+        $this->subject->setState($stateFixture);
+
+        self::assertAttributeEquals(
+            $stateFixture,
+            'state',
+            $this->subject
+        );
     }
 }

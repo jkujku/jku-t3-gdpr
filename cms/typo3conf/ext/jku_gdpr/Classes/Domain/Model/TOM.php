@@ -34,16 +34,23 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $description = '';
 
     /**
-     * data
+     * technical
      * 
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryData>
+     * @var bool
      */
-    protected $data = null;
+    protected $technical = false;
+
+    /**
+     * administrative
+     * 
+     * @var bool
+     */
+    protected $administrative = false;
 
     /**
      * tom
      * 
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTOM>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTom>
      */
     protected $tom = null;
 
@@ -53,6 +60,20 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryEmployee>
      */
     protected $employee = null;
+
+    /**
+     * data
+     * 
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryData>
+     */
+    protected $data = null;
+
+    /**
+     * state
+     * 
+     * @var \Jku\JkuGdpr\Domain\Model\State
+     */
+    protected $state = null;
 
     /**
      * Returns the title
@@ -165,49 +186,6 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Adds a CategoryTOM
-     * 
-     * @param \Jku\JkuGdpr\Domain\Model\CategoryTOM $tom
-     * @return void
-     */
-    public function addTom(\Jku\JkuGdpr\Domain\Model\CategoryTOM $tom)
-    {
-        $this->tom->attach($tom);
-    }
-
-    /**
-     * Removes a CategoryTOM
-     * 
-     * @param \Jku\JkuGdpr\Domain\Model\CategoryTOM $tomToRemove The CategoryTOM to be removed
-     * @return void
-     */
-    public function removeTom(\Jku\JkuGdpr\Domain\Model\CategoryTOM $tomToRemove)
-    {
-        $this->tom->detach($tomToRemove);
-    }
-
-    /**
-     * Returns the tom
-     * 
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTOM> $tom
-     */
-    public function getTom()
-    {
-        return $this->tom;
-    }
-
-    /**
-     * Sets the tom
-     * 
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTOM> $tom
-     * @return void
-     */
-    public function setTom(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tom)
-    {
-        $this->tom = $tom;
-    }
-
-    /**
      * Adds a CategoryEmployee
      * 
      * @param \Jku\JkuGdpr\Domain\Model\CategoryEmployee $employee
@@ -248,5 +226,131 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setEmployee(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $employee)
     {
         $this->employee = $employee;
+    }
+
+    /**
+     * Returns the technical
+     * 
+     * @return bool $technical
+     */
+    public function getTechnical()
+    {
+        return $this->technical;
+    }
+
+    /**
+     * Sets the technical
+     * 
+     * @param bool $technical
+     * @return void
+     */
+    public function setTechnical($technical)
+    {
+        $this->technical = $technical;
+    }
+
+    /**
+     * Returns the boolean state of technical
+     * 
+     * @return bool
+     */
+    public function isTechnical()
+    {
+        return $this->technical;
+    }
+
+    /**
+     * Returns the administrative
+     * 
+     * @return bool $administrative
+     */
+    public function getAdministrative()
+    {
+        return $this->administrative;
+    }
+
+    /**
+     * Sets the administrative
+     * 
+     * @param bool $administrative
+     * @return void
+     */
+    public function setAdministrative($administrative)
+    {
+        $this->administrative = $administrative;
+    }
+
+    /**
+     * Returns the boolean state of administrative
+     * 
+     * @return bool
+     */
+    public function isAdministrative()
+    {
+        return $this->administrative;
+    }
+
+    /**
+     * Adds a CategoryTOM
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryTom $tom
+     * @return void
+     */
+    public function addTom(\Jku\JkuGdpr\Domain\Model\CategoryTom $tom)
+    {
+        $this->tom->attach($tom);
+    }
+
+    /**
+     * Removes a CategoryTOM
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\CategoryTom $tomToRemove The CategoryTom to be removed
+     * @return void
+     */
+    public function removeTom(\Jku\JkuGdpr\Domain\Model\CategoryTom $tomToRemove)
+    {
+        $this->tom->detach($tomToRemove);
+    }
+
+    /**
+     * Returns the tom
+     * 
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTom> tom
+     */
+    public function getTom()
+    {
+        return $this->tom;
+    }
+
+    /**
+     * Sets the tom
+     * 
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTom> $tom
+     * @return void
+     */
+    public function setTom(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tom)
+    {
+        $this->tom = $tom;
+    }
+
+    /**
+     * Returns the state
+     * 
+     * @return \Jku\JkuGdpr\Domain\Model\State $state
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Sets the state
+     * 
+     * @param \Jku\JkuGdpr\Domain\Model\State $state
+     * @return void
+     */
+    public function setState(\Jku\JkuGdpr\Domain\Model\State $state)
+    {
+        $this->state = $state;
     }
 }

@@ -6,6 +6,8 @@ CREATE TABLE tx_jkugdpr_domain_model_register (
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
 
+	tx_extbase_type varchar(255) DEFAULT '' NOT NULL,
+
 );
 
 #
@@ -41,6 +43,9 @@ CREATE TABLE tx_jkugdpr_domain_model_pa (
 	legal_foundation int(11) unsigned DEFAULT '0' NOT NULL,
 	data_receiver int(11) unsigned DEFAULT '0' NOT NULL,
 	deletion_deadline int(11) unsigned DEFAULT '0' NOT NULL,
+	tom int(11) unsigned DEFAULT '0' NOT NULL,
+	state int(11) unsigned DEFAULT '0',
+	dsfa int(11) unsigned DEFAULT '0' NOT NULL,
 
 );
 
@@ -51,9 +56,12 @@ CREATE TABLE tx_jkugdpr_domain_model_tom (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+	technical smallint(5) unsigned DEFAULT '0' NOT NULL,
+	administrative smallint(5) unsigned DEFAULT '0' NOT NULL,
 	tom int(11) unsigned DEFAULT '0' NOT NULL,
 	employee int(11) unsigned DEFAULT '0' NOT NULL,
 	data int(11) unsigned DEFAULT '0' NOT NULL,
+	state int(11) unsigned DEFAULT '0',
 
 );
 
@@ -131,6 +139,46 @@ CREATE TABLE tx_jkugdpr_domain_model_categorylegalfoundation (
 # Table structure for table 'tx_jkugdpr_domain_model_categorytom'
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorytom (
+
+	title varchar(255) DEFAULT '' NOT NULL,
+	description text,
+	gdpr_articel int(11) unsigned DEFAULT '0' NOT NULL,
+
+);
+
+#
+# Table structure for table 'tx_jkugdpr_domain_model_person'
+#
+CREATE TABLE tx_jkugdpr_domain_model_person (
+
+	name varchar(255) DEFAULT '' NOT NULL,
+	employee int(11) unsigned DEFAULT '0' NOT NULL,
+
+);
+
+#
+# Table structure for table 'tx_jkugdpr_domain_model_categorytomgdpr'
+#
+CREATE TABLE tx_jkugdpr_domain_model_categorytomgdpr (
+
+	title varchar(255) DEFAULT '' NOT NULL,
+	description text,
+
+);
+
+#
+# Table structure for table 'tx_jkugdpr_domain_model_state'
+#
+CREATE TABLE tx_jkugdpr_domain_model_state (
+
+	state varchar(255) DEFAULT '' NOT NULL,
+
+);
+
+#
+# Table structure for table 'tx_jkugdpr_domain_model_categorydsfa'
+#
+CREATE TABLE tx_jkugdpr_domain_model_categorydsfa (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
@@ -250,6 +298,34 @@ CREATE TABLE tx_jkugdpr_pa_categorydeletiondeadline_mm (
 );
 
 #
+# Table structure for table 'tx_jkugdpr_pa_tom_mm'
+#
+CREATE TABLE tx_jkugdpr_pa_tom_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	PRIMARY KEY (uid_local,uid_foreign),
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_jkugdpr_pa_categorydsfa_mm'
+#
+CREATE TABLE tx_jkugdpr_pa_categorydsfa_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	PRIMARY KEY (uid_local,uid_foreign),
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
 # Table structure for table 'tx_jkugdpr_tom_categorytom_mm'
 #
 CREATE TABLE tx_jkugdpr_tom_categorytom_mm (
@@ -281,6 +357,34 @@ CREATE TABLE tx_jkugdpr_tom_employeecategory_mm (
 # Table structure for table 'tx_jkugdpr_tom_datacategory_mm'
 #
 CREATE TABLE tx_jkugdpr_tom_datacategory_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	PRIMARY KEY (uid_local,uid_foreign),
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_jkugdpr_categorytom_categorytomgdpr_mm'
+#
+CREATE TABLE tx_jkugdpr_categorytom_categorytomgdpr_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	PRIMARY KEY (uid_local,uid_foreign),
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tx_jkugdpr_person_categoryemployee_mm'
+#
+CREATE TABLE tx_jkugdpr_person_categoryemployee_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

@@ -4,17 +4,17 @@ namespace Jku\JkuGdpr\Tests\Unit\Controller;
 /**
  * Test case.
  */
-class CategoryTOMControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
+class CategoryTomControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
 {
     /**
-     * @var \Jku\JkuGdpr\Controller\CategoryTOMController
+     * @var \Jku\JkuGdpr\Controller\CategoryTomController
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\Jku\JkuGdpr\Controller\CategoryTOMController::class)
+        $this->subject = $this->getMockBuilder(\Jku\JkuGdpr\Controller\CategoryTomController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -28,22 +28,22 @@ class CategoryTOMControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTe
     /**
      * @test
      */
-    public function listActionFetchesAllCategoryTOMsFromRepositoryAndAssignsThemToView()
+    public function listActionFetchesAllCategoryTomsFromRepositoryAndAssignsThemToView()
     {
 
-        $allCategoryTOMs = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+        $allCategoryToms = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        $categoryTOMRepository = $this->getMockBuilder(\Jku\JkuGdpr\Domain\Repository\CategoryTOMRepository::class)
+        $categoryTomRepository = $this->getMockBuilder(\Jku\JkuGdpr\Domain\Repository\CategoryTomRepository::class)
             ->setMethods(['findAll'])
             ->disableOriginalConstructor()
             ->getMock();
-        $categoryTOMRepository->expects(self::once())->method('findAll')->will(self::returnValue($allCategoryTOMs));
-        $this->inject($this->subject, 'categoryTOMRepository', $categoryTOMRepository);
+        $categoryTomRepository->expects(self::once())->method('findAll')->will(self::returnValue($allCategoryToms));
+        $this->inject($this->subject, 'categoryTomRepository', $categoryTomRepository);
 
         $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
-        $view->expects(self::once())->method('assign')->with('categoryTOMs', $allCategoryTOMs);
+        $view->expects(self::once())->method('assign')->with('categoryToms', $allCategoryToms);
         $this->inject($this->subject, 'view', $view);
 
         $this->subject->listAction();
@@ -52,14 +52,14 @@ class CategoryTOMControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTe
     /**
      * @test
      */
-    public function showActionAssignsTheGivenCategoryTOMToView()
+    public function showActionAssignsTheGivenCategoryTomToView()
     {
-        $categoryTOM = new \Jku\JkuGdpr\Domain\Model\CategoryTOM();
+        $categoryTom = new \Jku\JkuGdpr\Domain\Model\CategoryTom();
 
         $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
         $this->inject($this->subject, 'view', $view);
-        $view->expects(self::once())->method('assign')->with('categoryTOM', $categoryTOM);
+        $view->expects(self::once())->method('assign')->with('categoryTom', $categoryTom);
 
-        $this->subject->showAction($categoryTOM);
+        $this->subject->showAction($categoryTom);
     }
 }
