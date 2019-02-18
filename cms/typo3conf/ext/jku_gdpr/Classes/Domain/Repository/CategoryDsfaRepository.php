@@ -15,6 +15,6 @@ namespace Jku\JkuGdpr\Domain\Repository;
 /**
  * The repository for CategoryDsfas
  */
-class CategoryDsfaRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CategoryDsfaRepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }

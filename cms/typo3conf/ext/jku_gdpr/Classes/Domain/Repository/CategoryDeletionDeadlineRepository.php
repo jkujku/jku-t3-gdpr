@@ -15,6 +15,6 @@ namespace Jku\JkuGdpr\Domain\Repository;
 /**
  * The repository for CategoryDeletionDeadlines
  */
-class CategoryDeletionDeadlineRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CategoryDeletionDeadlineRepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }

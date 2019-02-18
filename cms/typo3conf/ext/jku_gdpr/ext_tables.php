@@ -13,12 +13,45 @@ call_user_func(
                 'dashboard', // Submodule key
                 '', // Position
                 [
-                    'Register' => 'list, show','PA' => 'list, show','TOM' => 'list, show','CategoryEmployee' => 'list, show','CategoryData' => 'list, show','CategoryAffectedPerson' => 'list, show','CategoryPurpose' => 'list, show','CategoryDataReceiver' => 'list, show','CategoryDeletionDeadline' => 'list, show','CategoryLegalFoundation' => 'list, show','CategoryTom' => 'list, show','Person' => 'list, show','CategoryTomGdpr' => 'list, show','CategoryDsfa' => 'list, show',
+                    'Register' => 'list, show',
+                    
                 ],
                 [
                     'access' => 'user,group',
                     'icon'   => 'EXT:jku_gdpr/Resources/Public/Icons/user_mod_dashboard.svg',
                     'labels' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_dashboard.xlf',
+                ]
+            );
+
+            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+                'Jku.JkuGdpr',
+                'web', // Make module a submodule of 'web'
+                'pamanager', // Submodule key
+                '', // Position
+                [
+                    'PA' => 'list, show',
+                    
+                ],
+                [
+                    'access' => 'user,group',
+                    'icon'   => 'EXT:jku_gdpr/Resources/Public/Icons/user_mod_pamanager.svg',
+                    'labels' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_pamanager.xlf',
+                ]
+            );
+
+            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+                'Jku.JkuGdpr',
+                'web', // Make module a submodule of 'web'
+                'tommanager', // Submodule key
+                '', // Position
+                [
+                    'TOM' => 'list, show',
+                    
+                ],
+                [
+                    'access' => 'user,group',
+                    'icon'   => 'EXT:jku_gdpr/Resources/Public/Icons/user_mod_tommanager.svg',
+                    'labels' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_tommanager.xlf',
                 ]
             );
 
@@ -74,4 +107,5 @@ call_user_func(
     }
 );
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript('jku_gdpr', 'setup', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:jku_gdpr/Configuration/TypoScript/setup.typoscript">');

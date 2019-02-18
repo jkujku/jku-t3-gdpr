@@ -48,6 +48,13 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $administrative = false;
 
     /**
+     * state
+     * 
+     * @var \Jku\JkuGdpr\Domain\Model\State
+     */
+    protected $state = null;
+
+    /**
      * tom
      * 
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryTom>
@@ -67,13 +74,6 @@ class TOM extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryData>
      */
     protected $data = null;
-
-    /**
-     * state
-     * 
-     * @var \Jku\JkuGdpr\Domain\Model\State
-     */
-    protected $state = null;
 
     /**
      * Returns the title

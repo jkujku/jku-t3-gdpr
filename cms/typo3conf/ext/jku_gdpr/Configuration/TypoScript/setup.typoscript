@@ -14,4 +14,34 @@ module.tx_jkugdpr_web_jkugdprdashboard {
     }
 }
 
+# Module configuration
+module.tx_jkugdpr_web_jkugdprpamanager {
+    persistence {
+        storagePid = {$module.tx_jkugdpr_pamanager.persistence.storagePid}
+    }
+    view {
+        templateRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Templates/
+        templateRootPaths.1 = {$module.tx_jkugdpr_pamanager.view.templateRootPath}
+        partialRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Partials/
+        partialRootPaths.1 = {$module.tx_jkugdpr_pamanager.view.partialRootPath}
+        layoutRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Layouts/
+        layoutRootPaths.1 = {$module.tx_jkugdpr_pamanager.view.layoutRootPath}
+    }
+}
+
+# Module configuration
+module.tx_jkugdpr_web_jkugdprtommanager {
+    persistence {
+        storagePid = {$module.tx_jkugdpr_tommanager.persistence.storagePid}
+    }
+    view {
+        templateRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Templates/
+        templateRootPaths.1 = {$module.tx_jkugdpr_tommanager.view.templateRootPath}
+        partialRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Partials/
+        partialRootPaths.1 = {$module.tx_jkugdpr_tommanager.view.partialRootPath}
+        layoutRootPaths.0 = EXT:jku_gdpr/Resources/Private/Backend/Layouts/
+        layoutRootPaths.1 = {$module.tx_jkugdpr_tommanager.view.layoutRootPath}
+    }
+}
+
 ## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

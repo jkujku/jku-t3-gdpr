@@ -125,6 +125,32 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
     /**
      * @test
      */
+    public function getStateReturnsInitialValueForState()
+    {
+        self::assertEquals(
+            null,
+            $this->subject->getState()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setStateForStateSetsState()
+    {
+        $stateFixture = new \Jku\JkuGdpr\Domain\Model\State();
+        $this->subject->setState($stateFixture);
+
+        self::assertAttributeEquals(
+            $stateFixture,
+            'state',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
     public function getTomReturnsInitialValueForCategoryTom()
     {
         $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
@@ -309,31 +335,5 @@ class TOMTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         $this->inject($this->subject, 'data', $dataObjectStorageMock);
 
         $this->subject->removeDatum($datum);
-    }
-
-    /**
-     * @test
-     */
-    public function getStateReturnsInitialValueForState()
-    {
-        self::assertEquals(
-            null,
-            $this->subject->getState()
-        );
-    }
-
-    /**
-     * @test
-     */
-    public function setStateForStateSetsState()
-    {
-        $stateFixture = new \Jku\JkuGdpr\Domain\Model\State();
-        $this->subject->setState($stateFixture);
-
-        self::assertAttributeEquals(
-            $stateFixture,
-            'state',
-            $this->subject
-        );
     }
 }

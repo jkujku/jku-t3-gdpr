@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-17T22:40:08Z" product-name="jku_gdpr">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-02-18T22:09:52Z" product-name="jku_gdpr">
 		<header/>
 		<body>
 			<trans-unit id="tx_jkugdpr_domain_model_register">
@@ -39,6 +39,9 @@
 			<trans-unit id="tx_jkugdpr_domain_model_pa.description">
 				<source>Description</source>
 			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_pa.state">
+				<source>State</source>
+			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_pa.employee">
 				<source>Employee</source>
 			</trans-unit>
@@ -63,9 +66,6 @@
 			<trans-unit id="tx_jkugdpr_domain_model_pa.tom">
 				<source>Tom</source>
 			</trans-unit>
-			<trans-unit id="tx_jkugdpr_domain_model_pa.state">
-				<source>State</source>
-			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_pa.dsfa">
 				<source>Dsfa</source>
 			</trans-unit>
@@ -84,6 +84,9 @@
 			<trans-unit id="tx_jkugdpr_domain_model_tom.administrative">
 				<source>Administrative</source>
 			</trans-unit>
+			<trans-unit id="tx_jkugdpr_domain_model_tom.state">
+				<source>State</source>
+			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_tom.tom">
 				<source>Tom</source>
 			</trans-unit>
@@ -92,9 +95,6 @@
 			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_tom.data">
 				<source>Data</source>
-			</trans-unit>
-			<trans-unit id="tx_jkugdpr_domain_model_tom.state">
-				<source>State</source>
 			</trans-unit>
 			<trans-unit id="tx_jkugdpr_domain_model_categoryemployee">
 				<source>Category Employee</source>

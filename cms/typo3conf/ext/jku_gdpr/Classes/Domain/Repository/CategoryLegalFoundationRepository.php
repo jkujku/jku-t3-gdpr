@@ -15,6 +15,6 @@ namespace Jku\JkuGdpr\Domain\Repository;
 /**
  * The repository for CategoryLegalFoundations
  */
-class CategoryLegalFoundationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CategoryLegalFoundationRepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }

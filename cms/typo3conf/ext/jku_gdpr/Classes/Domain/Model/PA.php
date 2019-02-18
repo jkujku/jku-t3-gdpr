@@ -34,6 +34,13 @@ class PA extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $description = '';
 
     /**
+     * state
+     * 
+     * @var \Jku\JkuGdpr\Domain\Model\State
+     */
+    protected $state = null;
+
+    /**
      * employee
      * 
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\CategoryEmployee>
@@ -88,13 +95,6 @@ class PA extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Jku\JkuGdpr\Domain\Model\TOM>
      */
     protected $tom = null;
-
-    /**
-     * state
-     * 
-     * @var \Jku\JkuGdpr\Domain\Model\State
-     */
-    protected $state = null;
 
     /**
      * dsfa

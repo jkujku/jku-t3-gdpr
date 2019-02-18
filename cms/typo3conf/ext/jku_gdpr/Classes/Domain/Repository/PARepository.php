@@ -15,6 +15,6 @@ namespace Jku\JkuGdpr\Domain\Repository;
 /**
  * The repository for PAs
  */
-class PARepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class PARepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }

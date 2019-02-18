@@ -15,6 +15,6 @@ namespace Jku\JkuGdpr\Domain\Repository;
 /**
  * The repository for CategoryAffectedPersons
  */
-class CategoryAffectedPersonRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CategoryAffectedPersonRepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }

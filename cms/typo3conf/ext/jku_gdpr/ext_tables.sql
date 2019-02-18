@@ -37,6 +37,7 @@ CREATE TABLE tx_jkugdpr_domain_model_pa (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+	state int(11) unsigned DEFAULT '0',
 	employee int(11) unsigned DEFAULT '0' NOT NULL,
 	data int(11) unsigned DEFAULT '0' NOT NULL,
 	affected_person int(11) unsigned DEFAULT '0' NOT NULL,
@@ -45,7 +46,6 @@ CREATE TABLE tx_jkugdpr_domain_model_pa (
 	data_receiver int(11) unsigned DEFAULT '0' NOT NULL,
 	deletion_deadline int(11) unsigned DEFAULT '0' NOT NULL,
 	tom int(11) unsigned DEFAULT '0' NOT NULL,
-	state int(11) unsigned DEFAULT '0',
 	dsfa int(11) unsigned DEFAULT '0' NOT NULL,
 
 );
@@ -59,10 +59,10 @@ CREATE TABLE tx_jkugdpr_domain_model_tom (
 	description text,
 	technical smallint(5) unsigned DEFAULT '0' NOT NULL,
 	administrative smallint(5) unsigned DEFAULT '0' NOT NULL,
+	state int(11) unsigned DEFAULT '0',
 	tom int(11) unsigned DEFAULT '0' NOT NULL,
 	employee int(11) unsigned DEFAULT '0' NOT NULL,
 	data int(11) unsigned DEFAULT '0' NOT NULL,
-	state int(11) unsigned DEFAULT '0',
 
 );
 

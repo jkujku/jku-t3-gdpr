@@ -13,8 +13,8 @@ namespace Jku\JkuGdpr\Domain\Repository;
  *
  ***/
 /**
- * The repository for DataCategories
+ * The repository for CategoryDatas
  */
-class CategoryDataRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CategoryDataRepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }

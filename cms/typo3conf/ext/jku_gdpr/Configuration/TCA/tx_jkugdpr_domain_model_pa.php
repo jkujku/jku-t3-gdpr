@@ -18,10 +18,10 @@ return [
         'iconfile' => 'EXT:jku_gdpr/Resources/Public/Icons/tx_jkugdpr_domain_model_pa.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, employee, data, affected_person, purpose, legal_foundation, data_receiver, deletion_deadline, tom, state, dsfa',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, state, employee, data, affected_person, purpose, legal_foundation, data_receiver, deletion_deadline, tom, dsfa',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, employee, data, affected_person, purpose, legal_foundation, data_receiver, deletion_deadline, tom, state, dsfa'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, state, employee, data, affected_person, purpose, legal_foundation, data_receiver, deletion_deadline, tom, dsfa'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -103,6 +103,17 @@ return [
                 'rows' => 15,
                 'eval' => 'trim'
             ]
+        ],
+        'state' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_pa.state',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'foreign_table' => 'tx_jkugdpr_domain_model_state',
+                'minitems' => 0,
+                'maxitems' => 1,
+            ],
         ],
         'employee' => [
             'exclude' => false,
@@ -311,17 +322,6 @@ return [
                 ],
             ],
             
-        ],
-        'state' => [
-            'exclude' => false,
-            'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_pa.state',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'tx_jkugdpr_domain_model_state',
-                'minitems' => 0,
-                'maxitems' => 1,
-            ],
         ],
         'dsfa' => [
             'exclude' => false,

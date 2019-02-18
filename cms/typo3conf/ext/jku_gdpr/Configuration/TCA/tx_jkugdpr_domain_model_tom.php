@@ -18,10 +18,10 @@ return [
         'iconfile' => 'EXT:jku_gdpr/Resources/Public/Icons/tx_jkugdpr_domain_model_tom.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, technical, administrative, tom, employee, data, state',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, technical, administrative, state, tom, employee, data',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, technical, administrative, tom, employee, data, state'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, technical, administrative, state, tom, employee, data'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -130,6 +130,17 @@ return [
                 'default' => 0,
             ]
         ],
+        'state' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_tom.state',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'foreign_table' => 'tx_jkugdpr_domain_model_state',
+                'minitems' => 0,
+                'maxitems' => 1,
+            ],
+        ],
         'tom' => [
             'exclude' => false,
             'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_tom.tom',
@@ -207,17 +218,6 @@ return [
                 ],
             ],
             
-        ],
-        'state' => [
-            'exclude' => false,
-            'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_tom.state',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'tx_jkugdpr_domain_model_state',
-                'minitems' => 0,
-                'maxitems' => 1,
-            ],
         ],
     
     ],

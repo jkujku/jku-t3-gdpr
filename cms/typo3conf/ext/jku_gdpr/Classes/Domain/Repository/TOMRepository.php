@@ -15,6 +15,6 @@ namespace Jku\JkuGdpr\Domain\Repository;
 /**
  * The repository for TOMs
  */
-class TOMRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class TOMRepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }

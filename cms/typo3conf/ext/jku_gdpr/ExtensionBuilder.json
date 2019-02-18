@@ -3,7 +3,7 @@
         {
             "config": {
                 "position": [
-                    369,
+                    368,
                     28
                 ]
             },
@@ -65,7 +65,7 @@
         {
             "config": {
                 "position": [
-                    640,
+                    639,
                     23
                 ]
             },
@@ -128,7 +128,7 @@
         {
             "config": {
                 "position": [
-                    118,
+                    117,
                     24
                 ]
             },
@@ -191,7 +191,7 @@
         {
             "config": {
                 "position": [
-                    1269,
+                    1268,
                     113
                 ]
             },
@@ -247,6 +247,17 @@
                 },
                 "relationGroup": {
                     "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": false,
+                            "relationDescription": "",
+                            "relationName": "state",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "renderType": "selectSingle",
+                            "uid": "1008509544221"
+                        },
                         {
                             "foreignRelationClass": "",
                             "lazyLoading": false,
@@ -340,17 +351,6 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": false,
                             "relationDescription": "",
-                            "relationName": "state",
-                            "relationType": "manyToOne",
-                            "relationWire": "[wired]",
-                            "renderType": "selectSingle",
-                            "uid": "1008509544221"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": false,
-                            "relationDescription": "",
                             "relationName": "dsfa",
                             "relationType": "manyToMany",
                             "relationWire": "[wired]",
@@ -364,7 +364,7 @@
         {
             "config": {
                 "position": [
-                    130,
+                    129,
                     221
                 ]
             },
@@ -447,6 +447,17 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": false,
                             "relationDescription": "",
+                            "relationName": "state",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "renderType": "selectSingle",
+                            "uid": "761216273067"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": false,
+                            "relationDescription": "",
                             "relationName": "tom",
                             "relationType": "manyToMany",
                             "relationWire": "[wired]",
@@ -474,17 +485,6 @@
                             "relationWire": "[wired]",
                             "renderType": "selectMultipleSideBySide",
                             "uid": "1156105957759"
-                        },
-                        {
-                            "foreignRelationClass": "",
-                            "lazyLoading": false,
-                            "propertyIsExcludeField": false,
-                            "relationDescription": "",
-                            "relationName": "state",
-                            "relationType": "manyToOne",
-                            "relationWire": "[wired]",
-                            "renderType": "selectSingle",
-                            "uid": "761216273067"
                         }
                     ]
                 }
@@ -493,7 +493,7 @@
         {
             "config": {
                 "position": [
-                    772,
+                    771,
                     413
                 ]
             },
@@ -555,7 +555,7 @@
         {
             "config": {
                 "position": [
-                    505,
+                    504,
                     444
                 ]
             },
@@ -617,7 +617,7 @@
         {
             "config": {
                 "position": [
-                    843,
+                    842,
                     798
                 ]
             },
@@ -679,7 +679,7 @@
         {
             "config": {
                 "position": [
-                    573,
+                    572,
                     763
                 ]
             },
@@ -741,7 +741,7 @@
         {
             "config": {
                 "position": [
-                    332,
+                    331,
                     582
                 ]
             },
@@ -803,7 +803,7 @@
         {
             "config": {
                 "position": [
-                    1108,
+                    1107,
                     871
                 ]
             },
@@ -865,7 +865,7 @@
         {
             "config": {
                 "position": [
-                    808,
+                    807,
                     980
                 ]
             },
@@ -927,7 +927,7 @@
         {
             "config": {
                 "position": [
-                    37,
+                    36,
                     616
                 ]
             },
@@ -1001,7 +1001,7 @@
         {
             "config": {
                 "position": [
-                    961,
+                    960,
                     52
                 ]
             },
@@ -1064,7 +1064,7 @@
         {
             "config": {
                 "position": [
-                    248,
+                    247,
                     840
                 ]
             },
@@ -1126,7 +1126,7 @@
         {
             "config": {
                 "position": [
-                    1360,
+                    1359,
                     605
                 ]
             },
@@ -1177,7 +1177,7 @@
         {
             "config": {
                 "position": [
-                    539,
+                    538,
                     650
                 ]
             },
@@ -1241,13 +1241,33 @@
         "backendModules": [
             {
                 "actions": {
-                    "controllerActionCombinations": ""
+                    "controllerActionCombinations": "Register=>list,show"
                 },
-                "description": "",
+                "description": "GDPR Dashboard",
                 "key": "dashboard",
                 "mainModule": "web",
                 "name": "Dashboard",
-                "tabLabel": ""
+                "tabLabel": "Dashboard"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "PA=>list,show"
+                },
+                "description": "Manage Processing Activities",
+                "key": "pamanager",
+                "mainModule": "web",
+                "name": "PA Manager",
+                "tabLabel": "PA Manager"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "TOM=>list,show"
+                },
+                "description": "Manage technical and administrative measures",
+                "key": "tommanager",
+                "mainModule": "web",
+                "name": "TOM Manager",
+                "tabLabel": "TOM Manager"
             }
         ],
         "description": "",
@@ -1275,7 +1295,7 @@
         {
             "src": {
                 "moduleId": 4,
-                "terminal": "relationWire_2",
+                "terminal": "relationWire_3",
                 "uid": "1156105957759"
             },
             "tgt": {
@@ -1299,7 +1319,7 @@
         {
             "src": {
                 "moduleId": 4,
-                "terminal": "relationWire_0",
+                "terminal": "relationWire_1",
                 "uid": "209070850830"
             },
             "tgt": {
@@ -1311,7 +1331,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_1",
+                "terminal": "relationWire_2",
                 "uid": "406327518026"
             },
             "tgt": {
@@ -1323,7 +1343,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_2",
+                "terminal": "relationWire_3",
                 "uid": "1048754824877"
             },
             "tgt": {
@@ -1335,7 +1355,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_0",
+                "terminal": "relationWire_1",
                 "uid": "863366971"
             },
             "tgt": {
@@ -1347,7 +1367,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_6",
+                "terminal": "relationWire_7",
                 "uid": "250057321214"
             },
             "tgt": {
@@ -1359,7 +1379,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_4",
+                "terminal": "relationWire_5",
                 "uid": "1138659758403"
             },
             "tgt": {
@@ -1371,7 +1391,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_3",
+                "terminal": "relationWire_4",
                 "uid": "1368706879695"
             },
             "tgt": {
@@ -1383,7 +1403,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_5",
+                "terminal": "relationWire_6",
                 "uid": "62458338069"
             },
             "tgt": {
@@ -1395,7 +1415,7 @@
         {
             "src": {
                 "moduleId": 4,
-                "terminal": "relationWire_1",
+                "terminal": "relationWire_2",
                 "uid": "629498757621"
             },
             "tgt": {
@@ -1419,7 +1439,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_7",
+                "terminal": "relationWire_8",
                 "uid": "347967423156"
             },
             "tgt": {
@@ -1443,7 +1463,7 @@
         {
             "src": {
                 "moduleId": 4,
-                "terminal": "relationWire_3",
+                "terminal": "relationWire_0",
                 "uid": "761216273067"
             },
             "tgt": {
@@ -1455,7 +1475,7 @@
         {
             "src": {
                 "moduleId": 3,
-                "terminal": "relationWire_8",
+                "terminal": "relationWire_0",
                 "uid": "1008509544221"
             },
             "tgt": {
@@ -1490,7 +1510,7 @@
         }
     ],
     "log": {
-        "last_modified": "2019-02-17 10:40",
+        "last_modified": "2019-02-18 10:09",
         "extension_builder_version": "9.10.0",
         "be_user": " (1)"
     }

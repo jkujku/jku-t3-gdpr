@@ -15,6 +15,6 @@ namespace Jku\JkuGdpr\Domain\Repository;
 /**
  * The repository for CategoryDataReceivers
  */
-class CategoryDataReceiverRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CategoryDataReceiverRepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }

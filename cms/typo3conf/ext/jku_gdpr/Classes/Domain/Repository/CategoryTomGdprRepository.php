@@ -15,6 +15,6 @@ namespace Jku\JkuGdpr\Domain\Repository;
 /**
  * The repository for CategoryTomGdprs
  */
-class CategoryTomGdprRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CategoryTomGdprRepository extends \Jku\JkuGdpr\Domain\Repository\AbstractRepository
 {
 }
