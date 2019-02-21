@@ -65,7 +65,7 @@ return [
         'processor' => 'ImageMagick',
         'processor_allowTemporaryMasksAsPng' => '',
         'processor_colorspace' => 'RGB',
-        'processor_effects' => false,
+        'processor_effects' => '',
         'processor_enabled' => '1',
         'processor_path' => '/usr/bin/',
         'processor_path_lzw' => '/usr/bin/',

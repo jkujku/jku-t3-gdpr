@@ -33,18 +33,20 @@ class TOMController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $tOMs = $this->tOMRepository->findAll();
-        $this->view->assign('tOMs', $tOMs);
+
+        $toms = $this->tOMRepository->findAll();
+        $this->view->assign('toms', $toms);
     }
 
     /**
      * action show
      * 
-     * @param \Jku\JkuGdpr\Domain\Model\TOM $tOM
+     * @param \Jku\JkuGdpr\Domain\Model\TOM $tom
      * @return void
      */
-    public function showAction(\Jku\JkuGdpr\Domain\Model\TOM $tOM)
+    public function showAction(\Jku\JkuGdpr\Domain\Model\TOM $tom)
     {
-        $this->view->assign('tOM', $tOM);
+        debug($tom);
+        $this->view->assign('tom', $tom);
     }
 }

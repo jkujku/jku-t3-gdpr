@@ -1,41 +1,37 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
-
-This Template is responsible for creating a table of domain objects.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 <f:section name="content">
 <h1>Listing for TOM</h1>
 
 <f:flashMessages />
-
-<table  class="tx_jkugdpr" >
+<table class="tx_jkugdpr">
 	<tr>
+        <th><f:translate key="tx_jkugdpr_domain_model_tom.uid" /></th>
 		<th><f:translate key="tx_jkugdpr_domain_model_tom.title" /></th>
 		<th><f:translate key="tx_jkugdpr_domain_model_tom.description" /></th>
-		<th> </th>
-		<th> </th>
+		<th><f:translate key="tx_jkugdpr_domain_model_tom.technical" /></th>
+		<th><f:translate key="tx_jkugdpr_domain_model_tom.administrative" /></th>
+        <th><f:translate key="tx_jkugdpr_domain_model_tom.state" /></th>
+        <th><f:translate key="tx_jkugdpr_domain_model_tom.tom" /></th>
+        <th><f:translate key="tx_jkugdpr_domain_model_tom.employee" /></th>
+        <th><f:translate key="tx_jkugdpr_domain_model_tom.data" /></th>
 	</tr>
-
-	<f:for each="{tOMs}" as="tOM">
+    <f:debug>{toms}</f:debug>
+	<f:for each="{toms}" as="tom">
 		<tr>
-			<td><f:link.action action="show" arguments="{tOM : tOM}"> {tOM.title}</f:link.action></td>
-			<td>{tOM.description}</td>
-			<td>{tOM.state.state}</td>
-			<td><f:link.action action="edit" arguments="{tOM : tOM}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{tOM : tOM}">Delete</f:link.action></td>
+            <td>{tom.uid}</td>
+			<td><f:link.action action="show" arguments="{tom : tom}"> {tom.title}</f:link.action></td>
+			<td>{tom.description}</td>
+			<td>{tom.technical}</td>
+			<td>{tom.administrative}</td>
+			<td>{tom.state.state}</td>
+            <td>{tom.tom.title}</td>
+            <td>{tom.employee.title}</td>
+            <td>{tom.data.title}</td>
 		</tr>
 		</f:for>
 </table>
 
-<f:link.action action="new">New TOM</f:link.action>
+
 	</f:section>
 </html>

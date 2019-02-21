@@ -56,8 +56,7 @@ overwriteSettings:
   Resources:
     Private:
       #Language: merge
-      Backend:
-        Templates: keep
+      Backend: keep
 
   user_extension.svg: keep
 

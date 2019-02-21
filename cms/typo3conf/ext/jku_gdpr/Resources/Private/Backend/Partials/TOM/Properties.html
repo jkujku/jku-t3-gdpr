@@ -1,36 +1,39 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<table class="tx-jku-gdpr" >
-	<tr>
-		<td>
-			<f:translate key="tx_jkugdpr_domain_model_tom.title" />
-		</td>
-		<td>
-			{tOM.title}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_jkugdpr_domain_model_tom.description" />
-		</td>
-		<td>
-			{tOM.description}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_jkugdpr_domain_model_tom.technical" />
-		</td>
-		<td>
-			{tOM.technical}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<f:translate key="tx_jkugdpr_domain_model_tom.administrative" />
-		</td>
-		<td>
-			{tOM.administrative}
-		</td>
-	</tr>
-</table>
+<div class="tx-jku-gdpr" >
+    <div class="row">
+        <f:render partial="Components/Elements/Label" arguments="{key:'tx_jkugdpr_domain_model_tom.tom'}" />
+        <f:for each="{tom.tom}" as="cat">
+            {cat.title}
+        </f:for>
+    </div>
+    <div class="row">
+	    <h1>{tom.title}</h1>
+    </div>
+    <div class="row">
+        <div class="columns">
+            <f:render partial="Components/Elements/Boolean" arguments="{label:'tx_jkugdpr_domain_model_tom.technical', on:tom.technical}" />
+            <f:render partial="Components/Elements/Boolean" arguments="{label:'tx_jkugdpr_domain_model_tom.administrative', on:tom.administrative}" />
+        </div>
+        <div class="columns">
+            <f:render partial="Components/Elements/Label" arguments="{key:'tx_jkugdpr_domain_model_tom.state'}" />
+            <f:format.html>{tom.state.state}</f:format.html>
+        </div>
+    </div>
+    <div class="row">
+        <f:render partial="Components/Elements/Label" arguments="{key:'tx_jkugdpr_domain_model_tom.description'}" />
+        <f:format.html>{tom.description}</f:format.html>
+    </div>
+    <div class="row">
+        <f:render partial="Components/Elements/Label" arguments="{key:'tx_jkugdpr_domain_model_tom.employee'}" />
+        <f:for each="{tom.employee}" as="cat">
+            {cat.title}
+        </f:for>
+    </div>
+    <div class="row">
+        <f:render partial="Components/Elements/Label" arguments="{key:'tx_jkugdpr_domain_model_tom.data'}" />
+        <f:for each="{tom.data}" as="cat">
+            {cat.title}
+        </f:for>
+    </div>
+</div>
 </html>
