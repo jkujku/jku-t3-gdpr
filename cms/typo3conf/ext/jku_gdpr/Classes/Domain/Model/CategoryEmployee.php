@@ -35,7 +35,7 @@ class CategoryEmployee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the title
-     *
+     * 
      * @return string $title
      */
     public function getTitle()
@@ -45,7 +45,7 @@ class CategoryEmployee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the title
-     *
+     * 
      * @param string $title
      * @return void
      */
@@ -56,7 +56,7 @@ class CategoryEmployee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the description
-     *
+     * 
      * @return string $description
      */
     public function getDescription()
@@ -66,7 +66,7 @@ class CategoryEmployee extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the description
-     *
+     * 
      * @param string $description
      * @return void
      */

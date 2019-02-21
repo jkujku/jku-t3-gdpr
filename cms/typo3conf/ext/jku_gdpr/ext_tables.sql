@@ -6,8 +6,6 @@ CREATE TABLE tx_jkugdpr_domain_model_register (
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
 
-	tx_extbase_type varchar(255) DEFAULT '' NOT NULL,
-
 );
 
 #
@@ -414,4 +412,11 @@ CREATE TABLE tx_jkugdpr_person_categoryemployee_mm (
 
 CREATE TABLE tx_jkugdpr_domain_model_register (
 	tx_extbase_type varchar(255) DEFAULT '' NOT NULL,
+);
+
+#
+# Table structure for table 'tx_jkugdpr_domain_model_tom'
+#
+CREATE TABLE tx_jkugdpr_domain_model_tom (
+  tom_registers int(11) unsigned DEFAULT '0' NOT NULL,
 );

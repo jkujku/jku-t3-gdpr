@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.36-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.16  Distrib 10.1.26-MariaDB, for Win32 (AMD64)
 --
 -- Host: localhost    Database: t3gdpr_typo3
 -- ------------------------------------------------------
--- Server version	10.1.36-MariaDB
+-- Server version	10.1.37-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -2072,6 +2072,7 @@ CREATE TABLE `tx_jkugdpr_domain_model_tom` (
   `technical` smallint(5) unsigned NOT NULL DEFAULT '0',
   `administrative` smallint(5) unsigned NOT NULL DEFAULT '0',
   `state` int(10) unsigned DEFAULT '0',
+  `tom_registers` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`uid`),
   KEY `parent` (`pid`,`deleted`,`hidden`),
   KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`)
