@@ -33,7 +33,6 @@ class TOMController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-
         $toms = $this->tOMRepository->findAll();
         $this->view->assign('toms', $toms);
     }

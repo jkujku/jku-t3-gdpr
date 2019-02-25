@@ -1,4 +1,5 @@
 
+
 module.tx_jkugdpr_dashboard {
     view {
         # cat=module.tx_jkugdpr_dashboard/file; type=string; label=Path to template root (BE)

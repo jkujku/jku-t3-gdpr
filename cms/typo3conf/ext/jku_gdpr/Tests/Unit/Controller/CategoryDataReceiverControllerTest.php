@@ -25,6 +25,8 @@ class CategoryDataReceiverControllerTest extends \TYPO3\TestingFramework\Core\Un
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

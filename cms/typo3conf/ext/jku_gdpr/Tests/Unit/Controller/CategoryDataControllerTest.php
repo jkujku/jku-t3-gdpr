@@ -25,6 +25,8 @@ class CategoryDataControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitT
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

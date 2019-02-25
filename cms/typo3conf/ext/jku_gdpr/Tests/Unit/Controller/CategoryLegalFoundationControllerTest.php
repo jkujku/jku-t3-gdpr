@@ -25,6 +25,8 @@ class CategoryLegalFoundationControllerTest extends \TYPO3\TestingFramework\Core
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

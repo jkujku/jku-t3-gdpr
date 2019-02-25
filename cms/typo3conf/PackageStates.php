@@ -53,6 +53,9 @@ return [
         'extensionmanager' => [
             'packagePath' => 'typo3/sysext/extensionmanager/',
         ],
+        'feedit' => [
+            'packagePath' => 'typo3/sysext/feedit/',
+        ],
         'felogin' => [
             'packagePath' => 'typo3/sysext/felogin/',
         ],

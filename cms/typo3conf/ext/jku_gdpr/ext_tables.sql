@@ -3,8 +3,12 @@
 #
 CREATE TABLE tx_jkugdpr_domain_model_register (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
+	tx_extbase_type varchar(255) DEFAULT '' NOT NULL,
+
 
 );
 
@@ -12,10 +16,12 @@ CREATE TABLE tx_jkugdpr_domain_model_register (
 # Table structure for table 'tx_jkugdpr_domain_model_register'
 #
 CREATE TABLE tx_jkugdpr_domain_model_register (
+
 
 	tom_register_description text,
 	toms int(11) unsigned DEFAULT '0' NOT NULL,
 
+
 );
 
 #
@@ -23,8 +29,10 @@ CREATE TABLE tx_jkugdpr_domain_model_register (
 #
 CREATE TABLE tx_jkugdpr_domain_model_register (
 
+
 	pa_register_description text,
 	pas int(11) unsigned DEFAULT '0' NOT NULL,
+
 
 );
 
@@ -32,6 +40,7 @@ CREATE TABLE tx_jkugdpr_domain_model_register (
 # Table structure for table 'tx_jkugdpr_domain_model_pa'
 #
 CREATE TABLE tx_jkugdpr_domain_model_pa (
+
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
@@ -46,12 +55,14 @@ CREATE TABLE tx_jkugdpr_domain_model_pa (
 	tom int(11) unsigned DEFAULT '0' NOT NULL,
 	dsfa int(11) unsigned DEFAULT '0' NOT NULL,
 
+
 );
 
 #
 # Table structure for table 'tx_jkugdpr_domain_model_tom'
 #
 CREATE TABLE tx_jkugdpr_domain_model_tom (
+
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
@@ -62,6 +73,7 @@ CREATE TABLE tx_jkugdpr_domain_model_tom (
 	employee int(11) unsigned DEFAULT '0' NOT NULL,
 	data int(11) unsigned DEFAULT '0' NOT NULL,
 
+
 );
 
 #
@@ -69,8 +81,10 @@ CREATE TABLE tx_jkugdpr_domain_model_tom (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categoryemployee (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
 
 );
 
@@ -79,8 +93,10 @@ CREATE TABLE tx_jkugdpr_domain_model_categoryemployee (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorydata (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
 
 );
 
@@ -89,8 +105,10 @@ CREATE TABLE tx_jkugdpr_domain_model_categorydata (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categoryaffectedperson (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
 
 );
 
@@ -99,8 +117,10 @@ CREATE TABLE tx_jkugdpr_domain_model_categoryaffectedperson (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorypurpose (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
 
 );
 
@@ -109,8 +129,10 @@ CREATE TABLE tx_jkugdpr_domain_model_categorypurpose (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorydatareceiver (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
 
 );
 
@@ -119,8 +141,10 @@ CREATE TABLE tx_jkugdpr_domain_model_categorydatareceiver (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorydeletiondeadline (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
 
 );
 
@@ -129,8 +153,10 @@ CREATE TABLE tx_jkugdpr_domain_model_categorydeletiondeadline (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorylegalfoundation (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
 
 );
 
@@ -139,9 +165,11 @@ CREATE TABLE tx_jkugdpr_domain_model_categorylegalfoundation (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorytom (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
 	gdpr_articel int(11) unsigned DEFAULT '0' NOT NULL,
+
 
 );
 
@@ -150,8 +178,10 @@ CREATE TABLE tx_jkugdpr_domain_model_categorytom (
 #
 CREATE TABLE tx_jkugdpr_domain_model_person (
 
+
 	name varchar(255) DEFAULT '' NOT NULL,
 	employee int(11) unsigned DEFAULT '0' NOT NULL,
+
 
 );
 
@@ -160,8 +190,10 @@ CREATE TABLE tx_jkugdpr_domain_model_person (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorytomgdpr (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
+
 
 );
 
@@ -170,7 +202,9 @@ CREATE TABLE tx_jkugdpr_domain_model_categorytomgdpr (
 #
 CREATE TABLE tx_jkugdpr_domain_model_state (
 
+
 	state varchar(255) DEFAULT '' NOT NULL,
+
 
 );
 
@@ -179,11 +213,24 @@ CREATE TABLE tx_jkugdpr_domain_model_state (
 #
 CREATE TABLE tx_jkugdpr_domain_model_categorydsfa (
 
+
 	title varchar(255) DEFAULT '' NOT NULL,
 	description text,
 
+
 );
 
+
+   
+   
+
+   
+
+   
+   
+
+   
+      
 #
 # Table structure for table 'tx_jkugdpr_tomregister_tom_mm'
 #
@@ -197,7 +244,14 @@ CREATE TABLE tx_jkugdpr_tomregister_tom_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
+       
+    
 
+   
+   
+
+   
+      
 #
 # Table structure for table 'tx_jkugdpr_paregister_pa_mm'
 #
@@ -211,7 +265,14 @@ CREATE TABLE tx_jkugdpr_paregister_pa_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
+       
+    
 
+   
+   
+
+   
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_categoryemployee_mm'
 #
@@ -225,7 +286,9 @@ CREATE TABLE tx_jkugdpr_pa_categoryemployee_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_categorydata_mm'
 #
@@ -239,7 +302,9 @@ CREATE TABLE tx_jkugdpr_pa_categorydata_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_categoryaffectedperson_mm'
 #
@@ -253,7 +318,9 @@ CREATE TABLE tx_jkugdpr_pa_categoryaffectedperson_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_categorypurpose_mm'
 #
@@ -267,7 +334,9 @@ CREATE TABLE tx_jkugdpr_pa_categorypurpose_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_categorylegalfoundation_mm'
 #
@@ -281,7 +350,9 @@ CREATE TABLE tx_jkugdpr_pa_categorylegalfoundation_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_categorydatareceiver_mm'
 #
@@ -295,7 +366,9 @@ CREATE TABLE tx_jkugdpr_pa_categorydatareceiver_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_categorydeletiondeadline_mm'
 #
@@ -309,7 +382,9 @@ CREATE TABLE tx_jkugdpr_pa_categorydeletiondeadline_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_tom_mm'
 #
@@ -323,7 +398,9 @@ CREATE TABLE tx_jkugdpr_pa_tom_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_pa_categorydsfa_mm'
 #
@@ -337,7 +414,14 @@ CREATE TABLE tx_jkugdpr_pa_categorydsfa_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
+       
+    
 
+   
+   
+
+   
+      
 #
 # Table structure for table 'tx_jkugdpr_tom_categorytom_mm'
 #
@@ -351,7 +435,9 @@ CREATE TABLE tx_jkugdpr_tom_categorytom_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_tom_employeecategory_mm'
 #
@@ -365,7 +451,9 @@ CREATE TABLE tx_jkugdpr_tom_employeecategory_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
-
+       
+    
+      
 #
 # Table structure for table 'tx_jkugdpr_tom_datacategory_mm'
 #
@@ -379,7 +467,49 @@ CREATE TABLE tx_jkugdpr_tom_datacategory_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
+       
+    
 
+   
+   
+
+   
+
+   
+   
+
+   
+
+   
+   
+
+   
+
+   
+   
+
+   
+
+   
+   
+
+   
+
+   
+   
+
+   
+
+   
+   
+
+   
+
+   
+   
+
+   
+      
 #
 # Table structure for table 'tx_jkugdpr_categorytom_categorytomgdpr_mm'
 #
@@ -393,7 +523,14 @@ CREATE TABLE tx_jkugdpr_categorytom_categorytomgdpr_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
+       
+    
 
+   
+   
+
+   
+      
 #
 # Table structure for table 'tx_jkugdpr_person_categoryemployee_mm'
 #

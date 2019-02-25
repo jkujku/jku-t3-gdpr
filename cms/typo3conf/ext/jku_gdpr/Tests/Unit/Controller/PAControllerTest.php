@@ -25,6 +25,8 @@ class PAControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */
@@ -61,5 +63,38 @@ class PAControllerTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         $view->expects(self::once())->method('assign')->with('pA', $pA);
 
         $this->subject->showAction($pA);
+    }
+
+    /**
+     * @test
+     */
+    public function editActionAssignsTheGivenPAToView()
+    {
+        $pA = new \Jku\JkuGdpr\Domain\Model\PA();
+
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
+        $this->inject($this->subject, 'view', $view);
+        $view->expects(self::once())->method('assign')->with('pA', $pA);
+
+        $this->subject->editAction($pA);
+    }
+
+
+    /**
+     * @test
+     */
+    public function updateActionUpdatesTheGivenPAInPARepository()
+    {
+        $pA = new \Jku\JkuGdpr\Domain\Model\PA();
+
+        $pARepository = $this->getMockBuilder(\Jku\JkuGdpr\Domain\Repository\PARepository::class)
+            ->setMethods(['update'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $pARepository->expects(self::once())->method('update')->with($pA);
+        $this->inject($this->subject, 'pARepository', $pARepository);
+
+        $this->subject->updateAction($pA);
     }
 }

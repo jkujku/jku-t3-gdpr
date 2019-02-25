@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:for each="{pAs}" as="pA">
+	<hr />
+	<div>
+		<f:render partial="FormErrors" />
+		<f:form action="update" name="pA" object="{pA}" >
+			<f:render partial="PA/FormFields" arguments="{pA:pA}" />
+			<f:form.submit value="Save" />
+		</f:form>
+		<f:form.submit value="Save2" class="pa-update-cta" data="{uid:pA.uid, title:pA.title}" />
+	</div>
+</f:for>
+</html>

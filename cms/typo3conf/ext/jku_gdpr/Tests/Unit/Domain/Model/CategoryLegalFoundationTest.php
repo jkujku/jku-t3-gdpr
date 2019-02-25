@@ -22,6 +22,8 @@ class CategoryLegalFoundationTest extends \TYPO3\TestingFramework\Core\Unit\Unit
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

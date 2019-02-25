@@ -201,7 +201,7 @@
                     "_default0_list": true,
                     "_default1_show": true,
                     "_default2_new_create": false,
-                    "_default3_edit_update": false,
+                    "_default3_edit_update": true,
                     "_default4_delete": false,
                     "customActions": []
                 },
@@ -1251,7 +1251,7 @@
             },
             {
                 "actions": {
-                    "controllerActionCombinations": "PA=>list,show"
+                    "controllerActionCombinations": "PA=>list,show,edit,update"
                 },
                 "description": "Manage Processing Activities",
                 "key": "pamanager",
@@ -1510,7 +1510,7 @@
         }
     ],
     "log": {
-        "last_modified": "2019-02-21 10:25",
+        "last_modified": "2019-02-25 02:07",
         "extension_builder_version": "9.10.0",
         "be_user": " (1)"
     }

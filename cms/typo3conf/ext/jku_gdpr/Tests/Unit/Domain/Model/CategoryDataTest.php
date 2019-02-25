@@ -22,6 +22,8 @@ class CategoryDataTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

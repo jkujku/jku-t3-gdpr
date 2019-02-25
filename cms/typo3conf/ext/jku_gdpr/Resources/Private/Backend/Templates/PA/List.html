@@ -13,9 +13,14 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
+
+
+
 <h1>Listing for PA</h1>
 
 <f:flashMessages />
+
+	<f:render partial="PA/List" arguments="{pAs:pAs}" />
 
 <table  class="tx_jkugdpr" >
 	<tr>

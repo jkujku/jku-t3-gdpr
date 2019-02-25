@@ -25,6 +25,8 @@ class CategoryAffectedPersonControllerTest extends \TYPO3\TestingFramework\Core\
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

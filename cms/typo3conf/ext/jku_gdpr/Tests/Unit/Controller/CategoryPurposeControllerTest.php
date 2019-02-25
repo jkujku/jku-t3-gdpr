@@ -25,6 +25,8 @@ class CategoryPurposeControllerTest extends \TYPO3\TestingFramework\Core\Unit\Un
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

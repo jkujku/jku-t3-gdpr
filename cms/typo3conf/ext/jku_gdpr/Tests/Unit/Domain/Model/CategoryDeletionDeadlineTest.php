@@ -22,6 +22,8 @@ class CategoryDeletionDeadlineTest extends \TYPO3\TestingFramework\Core\Unit\Uni
         parent::tearDown();
     }
 
+
+
     /**
      * @test
      */

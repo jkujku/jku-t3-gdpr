@@ -67,7 +67,9 @@ return [
                 'max' => 255,
             ],
         ],
-
+        
+    
+    
         'state' => [
             'exclude' => false,
             'label' => 'LLL:EXT:jku_gdpr/Resources/Private/Language/locallang_db.xlf:tx_jkugdpr_domain_model_state.state',
