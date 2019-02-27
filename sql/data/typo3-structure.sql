@@ -1422,6 +1422,47 @@ CREATE TABLE `tt_content` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `tx_ajaxselectlist_domain_model_optionrecord`
+--
+
+DROP TABLE IF EXISTS `tx_ajaxselectlist_domain_model_optionrecord`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_ajaxselectlist_domain_model_optionrecord` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(10) unsigned NOT NULL DEFAULT '0',
+  `crdate` int(10) unsigned NOT NULL DEFAULT '0',
+  `cruser_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `deleted` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hidden` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `starttime` int(10) unsigned NOT NULL DEFAULT '0',
+  `endtime` int(10) unsigned NOT NULL DEFAULT '0',
+  `t3ver_oid` int(11) NOT NULL DEFAULT '0',
+  `t3ver_id` int(11) NOT NULL DEFAULT '0',
+  `t3ver_wsid` int(11) NOT NULL DEFAULT '0',
+  `t3ver_label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `t3ver_state` smallint(6) NOT NULL DEFAULT '0',
+  `t3ver_stage` int(11) NOT NULL DEFAULT '0',
+  `t3ver_count` int(11) NOT NULL DEFAULT '0',
+  `t3ver_tstamp` int(11) NOT NULL DEFAULT '0',
+  `t3ver_move_id` int(11) NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l10n_parent` int(11) NOT NULL DEFAULT '0',
+  `l10n_diffsource` mediumblob,
+  `l10n_state` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `image` int(10) unsigned NOT NULL DEFAULT '0',
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_zoom` smallint(5) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`),
+  KEY `language` (`l10n_parent`,`sys_language_uid`)
+);
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `tx_extensionmanager_domain_model_extension`
 --
 
