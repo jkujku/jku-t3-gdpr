@@ -150,4 +150,7 @@ return array(
     'Jku\\JkuGdpr\\Domain\\Repository\\RegisterRepository' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Repository/RegisterRepository.php',
     'Jku\\JkuGdpr\\Domain\\Repository\\TOMRegisterRepository' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Repository/TOMRegisterRepository.php',
     'Jku\\JkuGdpr\\Domain\\Repository\\TOMRepository' => $typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes/Domain/Repository/TOMRepository.php',
+    'Sebkln\\Ajaxselectlist\\Controller\\OptionRecordController' => $typo3InstallDir . 'typo3conf/ext/ajaxselectlist/Classes/Controller/OptionRecordController.php',
+    'Sebkln\\Ajaxselectlist\\Domain\\Model\\OptionRecord' => $typo3InstallDir . 'typo3conf/ext/ajaxselectlist/Classes/Domain/Model/OptionRecord.php',
+    'Sebkln\\Ajaxselectlist\\Domain\\Repository\\OptionRecordRepository' => $typo3InstallDir . 'typo3conf/ext/ajaxselectlist/Classes/Domain/Repository/OptionRecordRepository.php',
 );

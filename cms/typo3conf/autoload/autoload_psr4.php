@@ -7,4 +7,5 @@ $typo3InstallDir = \TYPO3\CMS\Core\Core\Environment::getPublicPath() . '/';
 return array(
     'EBT\\ExtensionBuilder\\' => array($typo3InstallDir . 'typo3conf/ext/extension_builder/Classes'),
     'Jku\\JkuGdpr\\' => array($typo3InstallDir . 'typo3conf/ext/jku_gdpr/Classes'),
+    'Sebkln\\Ajaxselectlist\\' => array($typo3InstallDir . 'typo3conf/ext/ajaxselectlist/Classes'),
 );

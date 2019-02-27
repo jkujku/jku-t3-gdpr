@@ -1,0 +1,33 @@
+{
+  "name": "sebkln/ajaxselectlist",
+  "description": "Provides a drop-down list which uses Ajax to load records into the page.",
+  "keywords": [
+    "typo3",
+    "extension",
+    "composer.json",
+    "ajax",
+    "form",
+    "select list"
+  ],
+  "homepage": "http://www.sklein-medien.de",
+  "authors": [
+    {
+      "name": "Sebastian Klein",
+      "email": "sebastian@sklein-medien.de"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "type": "typo3-cms-extension",
+  "require": {
+    "typo3/cms-core": ">=7.6.0 <8.7.99"
+  },
+  "replace": {
+    "ajaxselectlist": "self.version",
+    "typo3-ter/ajaxselectlist": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sebkln\\Ajaxselectlist\\": "Classes/"
+    }
+  }
+}

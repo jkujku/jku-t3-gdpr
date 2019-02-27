@@ -1,8 +1,11 @@
 <?php
 namespace Jku\JkuGdpr\Controller;
 
+use Jku\JkuGdpr\Domain\Repository\PARepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /***
  *
@@ -27,6 +30,7 @@ class PAController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @inject
      */
     protected $pARepository = null;
+
 
     /**
      * action list
@@ -81,26 +85,56 @@ class PAController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @param ResponseInterface $response
      * @return ResponseInterface
      */
-    public function update(ServerRequestInterface $request, ResponseInterface $response)
+    public function ajaxUpdate(ServerRequestInterface $request, ResponseInterface $response)
     {
         $queryParameters = $request->getParsedBody();
         /** @var \Jku\JkuGdpr\Domain\Model\PA $pA */
         $uid = $queryParameters['uid'];
         $title = $queryParameters['title'];
+        $pA = $queryParameters['pA'];
 
-        //$this->pARepository->update($pA);
 
 
-//        if (empty($id)) {
-//            $response->getBody()->write(json_encode(['success' => false]));
-//            return $response;
-//        }
-//        $param = ' -id=' . $id;
-//
-//        // trigger data import (simplified as example)
-//        $output = shell_exec('.' . DIRECTORY_SEPARATOR . 'import.sh' . $param);
+        $this->objectManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ObjectManager::class);
+        $pAController = $this->objectManager->get(PAController::class);
+        $pARepository = $this->objectManager->get(PARepository::class);
 
-        $response->getBody()->write(json_encode(['success' => true, 'output' => ($title . ' ' . $uid)]));
+        //$pARepository->update($pA);
+        /** @var \Jku\JkuGdpr\Domain\Model\PA $findPA */
+        $findPA = $pARepository->findByUid($uid);
+        $findPA->setTitle($title);
+        $pARepository->update($findPA);
+
+        $persistenceManager = $this->objectManager->get(PersistenceManager::class);
+        $persistenceManager->persistAll();
+
+        /** @var \Jku\JkuGdpr\Domain\Model\PA $findPA2 */
+        $findPA2 = $pARepository->findByUid($uid);
+
+
+        if (empty($findPA2)) {
+            $response->getBody()->write(json_encode(['success' => false]));
+            return $response;
+        }
+
+
+        $response->getBody()->write(json_encode(['success' => true, 'output' => ["title" => $findPA2->getTitle()]]));
         return $response;
     }
+
+    /**
+     * action update
+     *
+     * @param \Jku\JkuGdpr\Domain\Model\PA $pA
+     * @return void
+     */
+    public function ajaxUpdateAction(\Jku\JkuGdpr\Domain\Model\PA $pA = NULL)
+    {
+        $this->addFlashMessage('Something.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+        //$this->pARepository->update($pA);
+        //$persistenceManager = $this->objectManager->get(PersistenceManager::class);
+        //$persistenceManager->persistAll();
+        $this->view->assign('pA', $pA);
+    }
+
 }

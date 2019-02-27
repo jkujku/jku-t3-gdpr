@@ -95,11 +95,17 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'ajaxselectlist' => [
+            'packagePath' => 'typo3conf/ext/ajaxselectlist/',
+        ],
         'extension_builder' => [
             'packagePath' => 'typo3conf/ext/extension_builder/',
         ],
         'jku_gdpr' => [
             'packagePath' => 'typo3conf/ext/jku_gdpr/',
+        ],
+        'jku_gdpr_frontend' => [
+            'packagePath' => 'typo3conf/ext/jku_gdpr_frontend/',
         ],
     ],
     'version' => 5,
