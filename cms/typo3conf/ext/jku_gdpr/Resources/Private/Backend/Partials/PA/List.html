@@ -17,6 +17,19 @@
 		</f:form>
 	</div>
 	<div style="float: left;">
+		<f:form method="get" name="pA" object="{pA}" class="pa-update-form">
+			<f:render partial="PA/FormFields" arguments="{pA:pA}" />
+			<f:form.submit value="AjaxUpdatePSR7" />
+		</f:form>
+		<a class="btn btn-default t3js-record-hide" data-state="hidden" href="#" data-params="data[tx_jkugdpr_domain_model_pa][2][hidden]=1" title="" data-toggle-title="Hide record" data-original-title="Hide record">
+			<span class="t3js-icon icon icon-size-small icon-state-default icon-actions-edit-hide" data-identifier="actions-edit-hide">
+				<span class="icon-markup">
+					<img src="/jku-t3-gdpr/cms/typo3/sysext/core/Resources/Public/Icons/T3Icons/actions/actions-edit-hide.svg" width="16" height="16">
+				</span>
+			</span>
+		</a>
+	</div>
+	<div style="float: left;">
 		<f:form.submit value="Save2" class="pa-update-cta" data="{uid:pA.uid, title:pA.title, pA:pA}" />
 	</div>
 	<div style="clear: both"></div>

@@ -381,7 +381,7 @@ extbaseModeling_wiringEditorLanguage.propertiesFields =
 								label: TYPO3.settings.extensionBuilder._LOCAL_LANG.mainModule,
 								name: "mainModule",
 								required: true,
-								selectValues: ["web", "user","tools","help"]
+								selectValues: ["web", "user","tools","help", "custom"]
 							}
 						},
 						{

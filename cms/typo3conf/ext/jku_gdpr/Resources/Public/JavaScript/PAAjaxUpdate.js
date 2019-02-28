@@ -8,6 +8,7 @@ define(['jquery'], function($) {
 	console.log("Hey, I'm JavaScript Module PAAjaxUpdate.");
 
 	var PAAjaxUpdate = {
+		route2: TYPO3.settings.ajaxUrls['record_process'],
 		route: TYPO3.settings.ajaxUrls['jkugdpr-pa-update-action']
 	};
 
@@ -16,20 +17,23 @@ define(['jquery'], function($) {
 		console.log(this.route);
 	};
 
-	PAAjaxUpdate.update = function (data) {
-		console.log("Update ", data, data.serialize());
+	PAAjaxUpdate.update = function (formdata) {
+		//data = []
+		console.log("Update ", formdata, formdata.serialize());
 		$.ajax({
 			type: 'POST',
 			url: this.route,
-			data: data.serialize(),
+			data: formdata.serialize(),
+			dataType: "json",
+			//data : "data[tx_jkugdpr_domain_model_pa][2][hidden]=1&"+data.serialize(),
 			cache: false
 		}).done(function (response) {
-			if (response.success) {
+			if (response.hasErrors === false) {
 				top.TYPO3.Notification.success('Ajax Call Done', response.output);
 				PAAjaxUpdate.updateCallback(response.output);
 			} else {
 				top.TYPO3.Notification.error('Ajax Call Error!');
-				PAAjaxUpdate.updateCallback("error");
+				PAAjaxUpdate.updateCallback(response.messages);
 			}
 		});
 	};
