@@ -1,22 +1,22 @@
 /**
- * Module: TYPO3/CMS/JkuGdpr/PAUpdate
+ * Module: TYPO3/CMS/JkuGdpr/PAUpateRR
  *
  * JavaScript to handle data import
- * @exports TYPO3/CMS/JkuGdpr/PAUpdate
+ * @exports TYPO3/CMS/JkuGdpr/PAUpateRR
  */
 define(['jquery'], function($) {
-	console.log("Hey, I'm JavaScript Module PAUpdate.");
+	console.log("Hey, I'm JavaScript Module PAUpateRR jkugdpr-pa-update-request-response.");
 
-	var PAUpdate = {
-		route: TYPO3.settings.ajaxUrls['jkugdpr-pa-update']
+	var PAUpateRR = {
+		route: TYPO3.settings.ajaxUrls['jkugdpr-pa-update-request-response']
 	};
 
-	PAUpdate.init = function(data) {
+	PAUpateRR.init = function(data) {
 		console.log("Hello World.", data);
 		console.log(this.route);
 	};
 
-	PAUpdate.update = function (uid, title, pA) {
+	PAUpateRR.update = function (uid, title, pA) {
 		console.log("Update....", uid, title, pA);
 		$.ajax({
 			type: 'POST',
@@ -29,14 +29,15 @@ define(['jquery'], function($) {
 		}).done(function (response) {
 			if (response.success) {
 				top.TYPO3.Notification.success('Ajax Call Done', response.output);
-				PAUpdate.updateCallback(response.output);
+				PAUpateRR.updateCallback(response.output);
 			} else {
 				top.TYPO3.Notification.error('Ajax Call Error!');
+				console.log("Update form with", response.output);
 			}
 		});
 	};
 
-	PAUpdate.updateCallback = function(fields){
+	PAUpateRR.updateCallback = function(fields){
 		console.log("Update form with", fields);
 	};
 
@@ -45,15 +46,15 @@ define(['jquery'], function($) {
 	 * initializes events using deferred bound to document
 	 * so AJAX reloads are no problem
 	 */
-	PAUpdate.initializeEvents = function () {
-		$('.pa-update-cta').on('click', function (evt) {
+	PAUpateRR.initializeEvents = function () {
+		$('.jkugdpr-pa-update-request-response').on('click', function (evt) {
 			evt.preventDefault();
-			PAUpdate.update($(this).attr('data-uid'), $(this).attr('data-title'), $(this).attr('data-pa'));
+			PAUpateRR.update($(this).attr('data-uid'), $(this).attr('data-title'), $(this).attr('data-pa'));
 		});
 	};
 
-	$(PAUpdate.initializeEvents);
+	$(PAUpateRR.initializeEvents);
 
 	// To let the module be a dependency of another module, we return our object
-	return PAUpdate;
+	return PAUpateRR;
 });

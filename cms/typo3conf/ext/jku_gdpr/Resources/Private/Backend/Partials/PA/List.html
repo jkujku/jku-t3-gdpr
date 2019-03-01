@@ -5,15 +5,16 @@
 		<f:render partial="FormErrors" />
 		<f:form action="update" name="pA" object="{pA}">
 			<f:render partial="PA/FormFields" arguments="{pA:pA}" />
-			<f:form.submit value="Update" />
+			<f:form.submit value="Controller Action with reload" />
 		</f:form>
 	</div>
 	<div style="float: left;">
-		<f:form action="ajaxUpdate" name="pA" object="{pA}" class="pa-update-form">
+		<f:form.submit value="jkugdpr-pa-update-request-response" class="jkugdpr-pa-update-request-response" data="{uid:pA.uid, title:pA.title, pA:pA}" />
+	</div>
+	<div style="float: left;">
+		<f:form name="pA" object="{pA}" class="jkugdpr-pa-update-editrecord" enctype="multipart/form-data">
 			<f:render partial="PA/FormFields" arguments="{pA:pA}" />
-			<f:form.hidden name="action" value="ajaxUpdate"/>
-			<input type="hidden" name="type" value="571979">
-			<f:form.submit value="AjaxUpdate" />
+			<f:form.submit value="jkugdpr-pa-update-editrecord" />
 		</f:form>
 	</div>
 	<div style="float: left;">
@@ -21,17 +22,13 @@
 			<f:render partial="PA/FormFields" arguments="{pA:pA}" />
 			<f:form.submit value="AjaxUpdatePSR7" />
 		</f:form>
-		<a class="btn btn-default t3js-record-hide" data-state="hidden" href="#" data-params="data[tx_jkugdpr_domain_model_pa][2][hidden]=1" title="" data-toggle-title="Hide record" data-original-title="Hide record">
+		<a class="btn btn-default t3js-record-hide" data-state="hidden" href="/jku-t3-gdpr/typo3/pa/update/link" data-params="data[tx_jkugdpr_domain_model_pa][2][hidden]=1" title="" data-toggle-title="Hide record" data-original-title="Hide record">
 			<span class="t3js-icon icon icon-size-small icon-state-default icon-actions-edit-hide" data-identifier="actions-edit-hide">
-				<span class="icon-markup">
-					<img src="/jku-t3-gdpr/cms/typo3/sysext/core/Resources/Public/Icons/T3Icons/actions/actions-edit-hide.svg" width="16" height="16">
-				</span>
+
 			</span>
 		</a>
 	</div>
-	<div style="float: left;">
-		<f:form.submit value="Save2" class="pa-update-cta" data="{uid:pA.uid, title:pA.title, pA:pA}" />
-	</div>
+
 	<div style="clear: both"></div>
 </f:for>
 </html>

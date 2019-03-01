@@ -1,12 +1,18 @@
 <?php
+use TYPO3\CMS\Backend\Controller;
 return [
     // Does something
-    'jkugdpr-pa-update' => [
-        'path' => '/pa/update',
-        'target' => \Jku\JkuGdpr\Controller\PAController::class . '::ajaxUpdate',
+    'jkugdpr-pa-update-request-response' => [
+        'path' => '/pa/update/action/rr',
+        'target' => \Jku\JkuGdpr\Controller\PAController::class . '::ajaxUpdateRequestResponse',
     ],
-    'jkugdpr-pa-update-action' => [
-        'path' => '/pa/update-action',
-        'target' => \Jku\JkuGdpr\Controller\PAController::class . '::ajaxUpdateAction',
-    ]
+//    'jkugdpr-pa-update-update-typenum' => [
+//        'path' => '/pa/update/action/typenum',
+//        'target' => \Jku\JkuGdpr\Controller\PAController::class . '::ajaxUpdateTypenumAction',
+//    ],
+
+    'record_edit' => [
+        'path' => '/record/edit',
+        'target' => Controller\EditDocumentController::class . '::mainAction'
+    ],
 ];

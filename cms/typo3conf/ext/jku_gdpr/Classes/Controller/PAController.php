@@ -85,13 +85,15 @@ class PAController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @param ResponseInterface $response
      * @return ResponseInterface
      */
-    public function ajaxUpdate(ServerRequestInterface $request, ResponseInterface $response)
+    public function ajaxUpdateRequestResponse(ServerRequestInterface $request, ResponseInterface $response)
     {
         $queryParameters = $request->getParsedBody();
         /** @var \Jku\JkuGdpr\Domain\Model\PA $pA */
         $uid = $queryParameters['uid'];
         $title = $queryParameters['title'];
         $pA = $queryParameters['pA'];
+
+        debug($uid, $title, $pA);
 
 
 
@@ -128,7 +130,7 @@ class PAController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @param \Jku\JkuGdpr\Domain\Model\PA $pA
      * @return void
      */
-    public function ajaxUpdateAction(\Jku\JkuGdpr\Domain\Model\PA $pA = NULL)
+    public function egal(\Jku\JkuGdpr\Domain\Model\PA $pA = NULL)
     {
         $this->addFlashMessage('Something.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
         //$this->pARepository->update($pA);
