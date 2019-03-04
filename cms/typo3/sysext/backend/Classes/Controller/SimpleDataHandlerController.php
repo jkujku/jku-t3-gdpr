@@ -155,6 +155,8 @@ class SimpleDataHandlerController
      */
     public function processAjaxRequest(ServerRequestInterface $request): ResponseInterface
     {
+        //debug("processAjaxRequest");
+        //debug($request);
         // do the regular / main logic
         $this->initializeClipboard();
         $this->processRequest();
@@ -164,6 +166,8 @@ class SimpleDataHandlerController
 
         $content = [
             'redirect' => $this->redirect,
+            'data' => $this->data,
+            'cmd' => $this->cmd,
             'messages' => [],
             'hasErrors' => false
         ];

@@ -6,11 +6,11 @@
  */
 define(['jquery'], function($) {
 	console.log("Hey, I'm JavaScript Module PAUpdateEditrecord.");
-	console.log(TYPO3.settings.ajaxUrls['record_edit']);
+	console.log(TYPO3.settings.ajaxUrls['record_process']);
 
 	var PAUpdateEditrecord = {
 		//route: TYPO3.settings.ajaxUrls['record_process'],
-		route: TYPO3.settings.ajaxUrls['record_edit'],
+		route: TYPO3.settings.ajaxUrls['record_process'],
 		//route: TYPO3.settings.ajaxUrls['jkugdpr-pa-update-update-typenum']
 	};
 
@@ -26,9 +26,11 @@ define(['jquery'], function($) {
 			type: 'POST',
 			url: this.route,
 			//data: formdata.serialize(),
+			contentType : "application/x-www-form-urlencoded",
 			//dataType: "json",
 			//data : "data[tx_jkugdpr_domain_model_pa][2][hidden]=1&"+data.serialize(),
-			cache: false
+			data : formdata.serialize(),
+			//cache: false
 		}).done(function (response) {
 			if (response.hasErrors === false) {
 				top.TYPO3.Notification.success('Ajax Call Done', response.output);

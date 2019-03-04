@@ -513,6 +513,8 @@ class EditDocumentController
      */
     public function mainAction(ServerRequestInterface $request): ResponseInterface
     {
+
+        debug($request);
         // Unlock all locked records
         BackendUtility::lockRecords();
         if ($response = $this->preInit($request)) {
@@ -529,6 +531,7 @@ class EditDocumentController
             || isset($parsedBody['_duplicatedoc'])
         ) {
             if ($response = $this->processData($request)) {
+
                 return $response;
             }
         }
@@ -1160,6 +1163,8 @@ class EditDocumentController
      */
     public function main(ServerRequestInterface $request = null): void
     {
+
+        debug($request);
         if ($request === null) {
             // Set method signature in TYPO3 v10.0 to: "protected function main(ServerRequestInterface $request): void"
             trigger_error('EditDocumentController->main() will be set to protected in TYPO3 v10.0.', E_USER_DEPRECATED);

@@ -11,8 +11,23 @@ return [
 //        'target' => \Jku\JkuGdpr\Controller\PAController::class . '::ajaxUpdateTypenumAction',
 //    ],
 
-    'record_edit' => [
-        'path' => '/record/edit',
-        'target' => Controller\EditDocumentController::class . '::mainAction'
+//    'record_edit' => [
+//        'path' => '/record/edit',
+//        'target' => Controller\EditDocumentController::class . '::mainAction'
+//    ],
+
+/*
+    // AjaxRoutes.php
+    'record_process' => [
+        'path' => '/record/process',
+        'target' => Controller\SimpleDataHandlerController::class . '::processAjaxRequest'
     ],
+
+//Routes.php
+    'tce_db' => [
+        'path' => '/record/commit',
+        'target' => Controller\SimpleDataHandlerController::class . '::mainAction'
+    ],
+
+*/
 ];
