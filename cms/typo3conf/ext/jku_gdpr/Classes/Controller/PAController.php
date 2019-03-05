@@ -139,4 +139,42 @@ class PAController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('pA', $pA);
     }
 
+    /**
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @return ResponseInterface
+     */
+    public function updateDataHandler(ServerRequestInterface $request, ResponseInterface $response)
+    {
+
+        $queryParameters = $request->getParsedBody();
+        /** @var \Jku\JkuGdpr\Domain\Model\PA $pA */
+        $pa = $queryParameters['tx_jkugdpr_web_jkugdprpamanager']['pA'];
+        $data = array(
+            'tx_jkugdpr_domain_model_pa' => array(
+
+                    $pa['__identity'] => $pa
+
+
+            )
+        );
+
+
+
+        $dataHandler = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\DataHandling\DataHandler::class);
+        $dataHandler->start($data, []);
+        $dataHandler->process_datamap();
+
+
+
+        $response->getBody()->write(json_encode(['success' => true, 'hasErrors' => false,
+            'output' => "hello World",
+            'request' => $request,
+            'parsedParameters' => $queryParameters,
+            'dataArray' => $data,
+            'pA' => $pa
+        ]));
+        return $response;
+    }
+
 }

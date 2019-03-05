@@ -31,7 +31,7 @@ call_user_func(
                 'pamanager', // Submodule key
                 '', // Position
                 [
-                    'PA' => 'list, show, edit, update, updateTypenum',
+                    'PA' => 'list, show, edit, update, updateTypenum,updateDataHandler',
                     
                 ],
                 [

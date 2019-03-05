@@ -15,6 +15,14 @@ return [
 //        'path' => '/record/edit',
 //        'target' => Controller\EditDocumentController::class . '::mainAction'
 //    ],
+    // Does something
+    'jkugdpr-pa-update-data-handler' => [
+        'path' => '/pa/update/datahandler',
+        'target' => \Jku\JkuGdpr\Controller\PAController::class . '::updateDataHandler',
+    ],
+
+
+
 
 /*
     // AjaxRoutes.php

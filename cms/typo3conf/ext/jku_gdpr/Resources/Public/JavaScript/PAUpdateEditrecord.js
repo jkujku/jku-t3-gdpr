@@ -10,14 +10,17 @@ define(['jquery'], function($) {
 
 	var PAUpdateEditrecord = {
 		//route: TYPO3.settings.ajaxUrls['record_process'],
-		route: TYPO3.settings.ajaxUrls['record_process'],
+		//route: TYPO3.settings.ajaxUrls['record_process'],
 		//route: TYPO3.settings.ajaxUrls['jkugdpr-pa-update-update-typenum']
+
+		route: TYPO3.settings.ajaxUrls['jkugdpr-pa-update-data-handler']
 	};
 
 	PAUpdateEditrecord.init = function(data) {
 		console.log("Hello World.", data);
 		console.log(this.route);
 	};
+
 
 	PAUpdateEditrecord.update = function (formdata) {
 		//data = []
@@ -33,8 +36,9 @@ define(['jquery'], function($) {
 			//cache: false
 		}).done(function (response) {
 			if (response.hasErrors === false) {
+				console.log("response is: ", response.pA);
 				top.TYPO3.Notification.success('Ajax Call Done', response.output);
-				PAUpdateEditrecord.updateCallback(response.output);
+				PAUpdateEditrecord.updateCallback(response);
 			} else {
 				top.TYPO3.Notification.error('Ajax Call Error!');
 				PAUpdateEditrecord.updateCallback(response.messages);
